@@ -454,7 +454,7 @@ const data = [
     authors: ["Adams", "Miller", "Smart", "Funk"],
     session: "06 Synapsida",
     time: "01:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "52",
@@ -463,7 +463,7 @@ const data = [
     authors: ["Allison", "Cheb", "Tanaka"],
     session: "06 Synapsida",
     time: "01:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "53",
@@ -472,7 +472,7 @@ const data = [
     authors: ["Barrett"],
     session: "06 Synapsida",
     time: "01:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "54",
@@ -481,7 +481,7 @@ const data = [
     authors: ["Bertozzo", "Caravaggio", "DaVinci"],
     session: "06 Synapsida",
     time: "02:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "55",
@@ -490,7 +490,7 @@ const data = [
     authors: ["Brown", "Schwab"],
     session: "06 Synapsida",
     time: "02:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "56",
@@ -499,7 +499,7 @@ const data = [
     authors: ["Woodruff", "Dandy", "Everett", "Chan"],
     session: "06 Synapsida",
     time: "02:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "57",
@@ -508,7 +508,7 @@ const data = [
     authors: ["Brown", "Casey"],
     session: "06 Synapsida",
     time: "03:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "58",
@@ -516,7 +516,7 @@ const data = [
     authors: ["Buchmann"],
     session: "06 Synapsida",
     time: "03:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "59",
@@ -525,7 +525,7 @@ const data = [
     authors: ["Wyenberg-Henzler", "Stallnick", "Greer", "Thompson"],
     session: "06 Synapsida",
     time: "03:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "60",
@@ -534,7 +534,7 @@ const data = [
     authors: ["Wilkinson", "Emery", "Armstrong"],
     session: "06 Synapsida",
     time: "04:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
 ];
 

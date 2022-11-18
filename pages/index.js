@@ -1,5 +1,7 @@
-import TalkCard from "../components/TalkCard/TalkCard";
+import GreatHallRoom from "./greatHall";
 
-export default function Home() {
-  return <TalkCard />;
+function Home() {
+  return <GreatHallRoom />;
 }
+
+export default Home;
