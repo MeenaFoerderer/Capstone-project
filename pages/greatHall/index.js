@@ -1,4 +1,5 @@
 import { data } from "../../components/utils/data";
+import Header from "../../components/Header";
 import TalkList from "../../components/TalkList";
 import TalkItem from "../../components/TalkItem";
 import TalkInfoWrapper from "../../components/TalkInfoWrapper";
@@ -8,7 +9,9 @@ import Link from "next/link";
 function GreatHallRoom() {
   return (
     <>
-      <h2>Great Hall</h2>
+      <Header>
+        <h2>Great Hall</h2>
+      </Header>
       <TalkList>
         {data
           .filter((talk) => talk.room === "Great Hall")
