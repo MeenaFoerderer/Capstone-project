@@ -5,7 +5,6 @@ import TalkItem from "../../components/TalkItem";
 import TalkInfoWrapper from "../../components/TalkInfoWrapper";
 import RoomNav, { NavBar, NavButton } from "../../components/RoomNav";
 import { useRouter } from "next/router";
-//import Link from "next/link";
 
 function GreatHallRoom() {
   const router = useRouter();
@@ -45,7 +44,9 @@ function GreatHallRoom() {
         <NavButton type="button" onClick={() => router.push("/libertyHall")}>
           Prev
         </NavButton>
-
+        <NavButton type="button" onClick={() => router.push("/landingPage")}>
+          Home
+        </NavButton>
         <NavButton type="button" onClick={() => router.push("/metroEast")}>
           Next
         </NavButton>

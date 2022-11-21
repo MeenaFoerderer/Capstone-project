@@ -45,7 +45,9 @@ function LibertyHallRoom() {
         <NavButton type="button" onClick={() => router.push("/metroEast")}>
           Prev
         </NavButton>
-
+        <NavButton type="button" onClick={() => router.push("/landingPage")}>
+          Home
+        </NavButton>
         <NavButton type="button" onClick={() => router.push("/greatHall")}>
           Next
         </NavButton>

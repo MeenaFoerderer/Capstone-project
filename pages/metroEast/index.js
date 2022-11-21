@@ -45,7 +45,9 @@ function MetroEastRoom() {
         <NavButton type="button" onClick={() => router.push("/greatHall")}>
           Prev
         </NavButton>
-
+        <NavButton type="button" onClick={() => router.push("/landingPage")}>
+          Home
+        </NavButton>
         <NavButton type="button" onClick={() => router.push("libertyHall")}>
           Next
         </NavButton>
