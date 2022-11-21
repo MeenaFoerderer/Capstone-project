@@ -40,10 +40,10 @@ function MetroEastRoom() {
           ))}
       </TalkList>
       <NavBar>
-        <Link href="../greatHall">
+        <Link href="/greatHall">
           <NavButton>Prev</NavButton>
         </Link>
-        <Link href="../libertyHall">
+        <Link href="/libertyHall">
           <NavButton>Next</NavButton>
         </Link>
       </NavBar>
