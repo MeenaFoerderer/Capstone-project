@@ -4,11 +4,9 @@ import TalkList from "../../components/TalkList";
 import TalkItem from "../../components/TalkItem";
 import TalkInfoWrapper from "../../components/TalkInfoWrapper";
 import RoomNav, { NavBar, NavButton } from "../../components/RoomNav";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 function LibertyHallRoom() {
-  const router = useRouter();
-
   return (
     <>
       <Header>
@@ -42,15 +40,12 @@ function LibertyHallRoom() {
           ))}
       </TalkList>
       <NavBar>
-        <NavButton type="button" onClick={() => router.push("/metroEast")}>
-          Prev
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/landingPage")}>
-          Home
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/greatHall")}>
-          Next
-        </NavButton>
+        <Link href="/metroEast">
+          <NavButton>Prev</NavButton>
+        </Link>
+        <Link href="/greatHall">
+          <NavButton>Next</NavButton>
+        </Link>
       </NavBar>
     </>
   );

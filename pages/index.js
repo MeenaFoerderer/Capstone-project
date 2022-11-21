@@ -1,9 +1,9 @@
-import LandingPage from "./landingPage";
+import GreatHallRoom from "./greatHall";
 
 function Home() {
   return (
     <main>
-      <LandingPage />
+      <GreatHallRoom />
     </main>
   );
 }
