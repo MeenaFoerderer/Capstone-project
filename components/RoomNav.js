@@ -13,7 +13,7 @@ const NavBar = styled.div`
   right: 0;
 `;
 
-const NavButton = styled.a`
+const NavButton = styled.button`
   width: 5em;
   height: 3.5em;
   border-radius: 5px;
