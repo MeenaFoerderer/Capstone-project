@@ -13,7 +13,7 @@ function GreatHallRoom() {
         <h2>Great Hall</h2>
       </Header>
       <TalkList>
-        {data
+        {[...data]
           .filter((talk) => talk.room === "Great Hall")
           .sort((a, b) => {
             let timeA = a.time;

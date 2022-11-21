@@ -14,7 +14,7 @@ function MetroEastRoom() {
       </Header>
 
       <TalkList>
-        {data
+        {[...data]
           .filter((talk) => talk.room === "Metro East")
           .sort((a, b) => {
             let timeA = a.time;
