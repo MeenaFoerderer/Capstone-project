@@ -11,6 +11,12 @@ const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+    main {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 
 export default GlobalStyles;

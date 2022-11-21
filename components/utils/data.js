@@ -5,7 +5,7 @@ const data = [
       "NO SWIMMING DINOSAURS HERE: NEW INSIGHTS ON MANUS-DOMINATED DINOSAUR TRACKS FROM THE MAYAN DUDE RANCH IN BANDERA, TEXAS",
     authors: ["Adams", "Miller", "Smart", "Funk"],
     session: "01 Romer Prize",
-    time: "8:00 AM",
+    time: "08:00 AM",
     room: "Great Hall",
   },
   {
@@ -14,7 +14,7 @@ const data = [
       "DEVELOPING A SCALING METHOD TO ESTIMATE THE CENTER OF MASS IN DINOSAURS",
     authors: ["Allison", "Cheb", "Tanaka"],
     session: "01 Romer Prize",
-    time: "8:20 AM",
+    time: "08:20 AM",
     room: "Great Hall",
   },
   {
@@ -23,7 +23,7 @@ const data = [
       "DIVERGENT STRATEGIES FOR HIGH-FIBER HERBIVORY AMONG EARLY-DIVERGING ORNITHISCHIAN DINOSAURS",
     authors: ["Barrett"],
     session: "01 Romer Prize",
-    time: "8:40 AM",
+    time: "08:40 AM",
     room: "Great Hall",
   },
   {
@@ -32,7 +32,7 @@ const data = [
       "A PATHOLOGICAL FEMUR OF AN IGUANDONTIAN DINOSAUR WITH MEDULLARY-LIKE BONE INVOLVEMENT IN THE HEALING PROCESS",
     authors: ["Bertozzo", "Caravaggio", "DaVinci"],
     session: "01 Romer Prize",
-    time: "9:00 AM",
+    time: "09:00 AM",
     room: "Great Hall",
   },
   {
@@ -184,7 +184,7 @@ const data = [
       "CHANGING CLIMATE PREFERENCES AND FUNCTIONAL STASIS IN MAMMALIAN COMMUNITIES ACROSS THE PALEOCENE-EOCENE THERMAL MAXIMUM OF THE BIGHORN BASIN, WYOMING",
     authors: ["Whittingham", "Kent", "Boessenecker"],
     session: "03 Mammal Evolution",
-    time: "8:00 AM",
+    time: "08:00 AM",
     room: "Metro East",
   },
   {
@@ -193,7 +193,7 @@ const data = [
       "BUILDING ECOMETRIC MODELS USING SMALL MAMMAL HYPSODONTY TO OBSERVE NOVEL TRAIT-ENVIRONMENTAL RELATIONSHIPS THROUGH TIME IN AFRICA",
     authors: ["Schap"],
     session: "03 Mammal Evolution",
-    time: "8:20 AM",
+    time: "08:20 AM",
     room: "Metro East",
   },
   {
@@ -202,7 +202,7 @@ const data = [
       "DISRUPTION OF TRAITENVIRONMENT RELATIONSHIPS IN AFRICAN MEGAFAUNA COINCIDENT WITH HOMININ EMERGENCE",
     authors: ["Lauer", "Felice"],
     session: "03 Mammal Evolution",
-    time: "8:40 AM",
+    time: "08:40 AM",
     room: "Metro East",
   },
   {
@@ -211,7 +211,7 @@ const data = [
       "DIETARY PALEOECOLOGY OF UNGULATES IN RELATION TO ENVIRONMENTAL CHANGE IN THE MIOCENE DOVE SPRING FORMATION, CALIFORNIA",
     authors: ["Hardy", "Fox", "Daeschler"],
     session: "03 Mammal Evolution",
-    time: "9:00 AM",
+    time: "09:00 AM",
     room: "Metro East",
   },
   {
@@ -363,7 +363,7 @@ const data = [
       "AN UNRECOGNIZED BOUNTY: THE FOURTH DICRAEOSAURID SAUROPOD FROM THE MORRISON FORMATION (LATE JURASSIC) OF NORTH AMERICA",
     authors: ["Whitlock", "Nye", "Swartout", "Gomes", "Greer"],
     session: "05 Dinosaur Macroevolution",
-    time: "8:00 AM",
+    time: "08:00 AM",
     room: "Metro West",
   },
   {
@@ -372,7 +372,7 @@ const data = [
       "FROM SEA TO SKY: WATER LAUNCH AND SOARING PERFORMANCE IN THE LATE CRETACEOUS PTEROSAUR, NYCTOSAURUS",
     authors: ["Welch"],
     session: "05 Dinosaur Macroevolution",
-    time: "8:20 AM",
+    time: "08:20 AM",
     room: "Metro West",
   },
   {
@@ -454,7 +454,7 @@ const data = [
     authors: ["Adams", "Miller", "Smart", "Funk"],
     session: "06 Synapsida",
     time: "01:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "52",
@@ -463,7 +463,7 @@ const data = [
     authors: ["Allison", "Cheb", "Tanaka"],
     session: "06 Synapsida",
     time: "01:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "53",
@@ -472,7 +472,7 @@ const data = [
     authors: ["Barrett"],
     session: "06 Synapsida",
     time: "01:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "54",
@@ -481,7 +481,7 @@ const data = [
     authors: ["Bertozzo", "Caravaggio", "DaVinci"],
     session: "06 Synapsida",
     time: "02:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "55",
@@ -490,7 +490,7 @@ const data = [
     authors: ["Brown", "Schwab"],
     session: "06 Synapsida",
     time: "02:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "56",
@@ -499,7 +499,7 @@ const data = [
     authors: ["Woodruff", "Dandy", "Everett", "Chan"],
     session: "06 Synapsida",
     time: "02:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "57",
@@ -508,7 +508,7 @@ const data = [
     authors: ["Brown", "Casey"],
     session: "06 Synapsida",
     time: "03:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "58",
@@ -516,7 +516,7 @@ const data = [
     authors: ["Buchmann"],
     session: "06 Synapsida",
     time: "03:20 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "59",
@@ -525,7 +525,7 @@ const data = [
     authors: ["Wyenberg-Henzler", "Stallnick", "Greer", "Thompson"],
     session: "06 Synapsida",
     time: "03:40 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
   {
     id: "60",
@@ -534,7 +534,7 @@ const data = [
     authors: ["Wilkinson", "Emery", "Armstrong"],
     session: "06 Synapsida",
     time: "04:00 PM",
-    room: "Frontenac Hall",
+    room: "Metro West",
   },
 ];
 
