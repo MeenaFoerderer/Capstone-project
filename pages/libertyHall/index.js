@@ -16,6 +16,18 @@ function LibertyHallRoom() {
       <TalkList>
         {data
           .filter((talk) => talk.room === "Metro West")
+          .sort((a, b) => {
+            let timeA = a.time;
+            let timeB = b.time;
+
+            return timeA < timeB ? -1 : 1;
+          })
+          .sort((a, b) => {
+            let sessionA = a.session;
+            let sessionB = b.session;
+
+            return sessionA < sessionB ? -1 : 1;
+          })
           .map((talk) => (
             <TalkItem key={talk.id}>
               <h4>{talk.title}</h4>
