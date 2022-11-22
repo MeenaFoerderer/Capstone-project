@@ -7,23 +7,23 @@ function InfoPage() {
 
   return (
     <InfoContainer>
-      <h3>82nd ANNUAL MEETING</h3>
-      <h4>The Westin Harbour Castle - Toronto, Ontario, Canada</h4>
-      <h4>November 2-5, 2022</h4>
-      <h4>HOST COMMITTEE</h4>
+      <h1>82nd ANNUAL MEETING</h1>
+      <h2>The Westin Harbour Castle - Toronto, Ontario, Canada</h2>
+      <h2>November 2-5, 2022</h2>
+      <h3>HOST COMMITTEE</h3>
       <p>David C. Evans, Co-Chair Mary T. Silcox, Co-Chair</p>
-      <h4>SYMPOSIUM CONVENORS</h4>
+      <h3>SYMPOSIUM CONVENORS</h3>
       <p>
         Nina G. Jablonski, Xueping Ji, Taormina Lepore, David A. Levering,
         Denise F. Su
       </p>
-      <h4>PROGRAMM COMMITTEE</h4>
+      <h3>PROGRAMM COMMITTEE</h3>
       <p>
         Ken D. Angielczyk, Victoria Arbour, Arnau Bolet, Matthew R. Borths,
         Jennifer Botha, Judd A. Case, Kimberley Chapelle, Karen Chin, Brian
         Choo, Thomas M. Cullen, Liping Dong, Alton C. Dooley, Jaelyn J. Eberle
       </p>
-      <h4>EDITORS</h4>
+      <h3>EDITORS</h3>
       <p>Dana J. Ehret, Andrew A. Farke, Ethan Fulwood</p>
       <NavButton type="button" onClick={() => router.push("/landingPage")}>
         Home
