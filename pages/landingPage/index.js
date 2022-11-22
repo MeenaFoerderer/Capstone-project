@@ -1,21 +1,14 @@
-import { useRouter } from "next/router";
 import styled from "styled-components";
-import { NavButton } from "../../components/RoomNav";
+import StyledLink from "../../components/StyledLink";
 
 function LandingPage() {
-  const router = useRouter();
-
   return (
     <LandingPageContainer>
-      <h1>Welcome to Jurassic Talk 2022 NYC</h1>
-      <ButtonWrapper>
-        <NavButton type="button" onClick={() => router.push("/infoPage")}>
-          Info
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/greatHall")}>
-          Schedule
-        </NavButton>
-      </ButtonWrapper>
+      <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
+      <NavWrapper>
+        <StyledLink href="/infoPage">Info</StyledLink>
+        <StyledLink href="/greatHall">Schedule</StyledLink>
+      </NavWrapper>
     </LandingPageContainer>
   );
 }
@@ -26,7 +19,7 @@ const LandingPageContainer = styled.div`
   padding: 3em;
 `;
 
-const ButtonWrapper = styled.div`
+const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
