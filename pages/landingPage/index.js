@@ -1,20 +1,15 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
 import styled from "styled-components";
-import { NavButton } from "../../components/RoomNav";
+import StyledLink from "../../components/StyledLink";
 
 function LandingPage() {
-  const router = useRouter();
-
   return (
     <LandingPageContainer>
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <NavWrapper>
-        <NavButton type="button" onClick={() => router.push("/infoPage")}>
-          Info
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/greatHall")}>
-          Schedule
-        </NavButton>
+        <StyledLink href="/infoPage">Info</StyledLink>
+
+        <StyledLink href="/greatHall">Schedule</StyledLink>
       </NavWrapper>
     </LandingPageContainer>
   );
