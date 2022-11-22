@@ -7,7 +7,7 @@ function LandingPage() {
 
   return (
     <LandingPageContainer>
-      <h1>Welcome to Jurassic Talk 2022 NYC</h1>
+      <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <ButtonWrapper>
         <NavButton type="button" onClick={() => router.push("/infoPage")}>
           Info
