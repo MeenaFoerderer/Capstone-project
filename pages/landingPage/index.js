@@ -8,14 +8,14 @@ function LandingPage() {
   return (
     <LandingPageContainer>
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
-      <ButtonWrapper>
+      <NavWrapper>
         <NavButton type="button" onClick={() => router.push("/infoPage")}>
           Info
         </NavButton>
         <NavButton type="button" onClick={() => router.push("/greatHall")}>
           Schedule
         </NavButton>
-      </ButtonWrapper>
+      </NavWrapper>
     </LandingPageContainer>
   );
 }
@@ -26,7 +26,7 @@ const LandingPageContainer = styled.div`
   padding: 3em;
 `;
 
-const ButtonWrapper = styled.div`
+const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
