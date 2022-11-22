@@ -3,17 +3,16 @@ import Header from "../../components/Header";
 import TalkList from "../../components/TalkList";
 import TalkItem from "../../components/TalkItem";
 import TalkInfoWrapper from "../../components/TalkInfoWrapper";
-import RoomNav, { NavBar, NavButton } from "../../components/RoomNav";
-import { useRouter } from "next/router";
+import NavBar from "../../components/RoomNav";
+import StyledLink from "../../components/StyledLink";
 
 function GreatHallRoom() {
-  const router = useRouter();
-
   return (
-    <main>
+    <>
       <Header>
         <h2>Great Hall</h2>
       </Header>
+
       <TalkList>
         {[...data]
           .filter((talk) => talk.room === "Great Hall")
@@ -41,17 +40,11 @@ function GreatHallRoom() {
           ))}
       </TalkList>
       <NavBar>
-        <NavButton type="button" onClick={() => router.push("/libertyHall")}>
-          Prev
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/landingPage")}>
-          Home
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/metroEast")}>
-          Next
-        </NavButton>
+        <StyledLink href="/libertyHall">Prev</StyledLink>
+        <StyledLink href="/landingPage">Home</StyledLink>
+        <StyledLink href="/metroEast">Next</StyledLink>
       </NavBar>
-    </main>
+    </>
   );
 }
 

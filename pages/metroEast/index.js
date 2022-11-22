@@ -3,12 +3,10 @@ import Header from "../../components/Header";
 import TalkList from "../../components/TalkList";
 import TalkItem from "../../components/TalkItem";
 import TalkInfoWrapper from "../../components/TalkInfoWrapper";
-import RoomNav, { NavBar, NavButton } from "../../components/RoomNav";
-import { useRouter } from "next/router";
+import NavBar from "../../components/RoomNav";
+import StyledLink from "../../components/StyledLink";
 
 function MetroEastRoom() {
-  const router = useRouter();
-
   return (
     <>
       <Header>
@@ -42,15 +40,9 @@ function MetroEastRoom() {
           ))}
       </TalkList>
       <NavBar>
-        <NavButton type="button" onClick={() => router.push("/greatHall")}>
-          Prev
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("/landingPage")}>
-          Home
-        </NavButton>
-        <NavButton type="button" onClick={() => router.push("libertyHall")}>
-          Next
-        </NavButton>
+        <StyledLink href="/greatHall">Prev</StyledLink>
+        <StyledLink href="/landingPage">Home</StyledLink>
+        <StyledLink href="/libertyHall">Next</StyledLink>
       </NavBar>
     </>
   );

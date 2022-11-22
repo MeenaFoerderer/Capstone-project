@@ -13,12 +13,4 @@ const NavBar = styled.div`
   right: 0;
 `;
 
-const NavButton = styled.button`
-  width: 5em;
-  height: 3.5em;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-`;
-
-export { NavBar, NavButton };
+export default NavBar;

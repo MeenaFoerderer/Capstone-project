@@ -1,10 +1,7 @@
-import { useRouter } from "next/router";
 import styled from "styled-components";
-import { NavButton } from "../../components/RoomNav";
+import StyledLink from "../../components/StyledLink";
 
 function InfoPage() {
-  const router = useRouter();
-
   return (
     <InfoContainer>
       <h1>82nd ANNUAL MEETING</h1>
@@ -25,16 +22,20 @@ function InfoPage() {
       </p>
       <h3>EDITORS</h3>
       <p>Dana J. Ehret, Andrew A. Farke, Ethan Fulwood</p>
-      <NavButton type="button" onClick={() => router.push("/landingPage")}>
-        Home
-      </NavButton>
+      <LinkFlexContainer>
+        <StyledLink href="/landingPage">Home</StyledLink>
+      </LinkFlexContainer>
     </InfoContainer>
   );
 }
 
+const LinkFlexContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const InfoContainer = styled.div`
   text-align: center;
-  margin: 0 auto;
 `;
 
 export default InfoPage;

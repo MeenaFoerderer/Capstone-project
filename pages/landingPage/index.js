@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import StyledLink from "../../components/StyledLink";
 
@@ -8,7 +7,6 @@ function LandingPage() {
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <NavWrapper>
         <StyledLink href="/infoPage">Info</StyledLink>
-
         <StyledLink href="/greatHall">Schedule</StyledLink>
       </NavWrapper>
     </LandingPageContainer>
