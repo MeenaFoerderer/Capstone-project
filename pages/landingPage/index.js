@@ -7,7 +7,7 @@ function LandingPage() {
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <NavWrapper>
         <StyledLink href="/infoPage">Info</StyledLink>
-        <StyledLink href="/greatHall">Schedule</StyledLink>
+        <StyledLink href="/dayOne">Schedule</StyledLink>
       </NavWrapper>
     </LandingPageContainer>
   );

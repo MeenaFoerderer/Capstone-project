@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+
+    body {
+        padding-top: 50px;
+    }
+
     main {
         margin: 0 auto;
         display: flex;
