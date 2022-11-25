@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterNav = styled.div`
+const FooterNav = styled.nav`
   background-color: gray;
   height: 4em;
   width: 100%;

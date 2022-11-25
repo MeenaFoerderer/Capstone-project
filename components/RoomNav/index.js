@@ -3,7 +3,7 @@ import TalkItem from "../TalkItem";
 import TalkInfoWrapper from "../TalkInfoWrapper";
 import FooterNav from "../FooterNav";
 import StyledLink from "../StyledLink";
-import StyledRoom from "../StyledRoom";
+import StyledRoom from "../RoomHeadline";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -50,8 +50,8 @@ export default function RoomNav({ talks }) {
         <TalkList>
           {talksInCurrentRoom.map((talk) => (
             <TalkItem key={talk.id}>
-              <h4>{talk.title}</h4>
-              <h5>{talk.authors[0]}</h5>
+              <StyledTalkTitle>{talk.title}</StyledTalkTitle>
+              <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
               <TalkInfoWrapper>
                 <p>{talk.session}</p>
                 <p>{talk.day}</p>
@@ -75,4 +75,12 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const StyledTalkTitle = styled.h2`
+  font-size: 1.1rem;
+`;
+
+const StyledSpeakerName = styled.h3`
+  font-size: 1rem;
 `;
