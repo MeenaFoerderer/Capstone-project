@@ -1,11 +1,12 @@
 import TalkList from "../TalkList";
 import TalkItem from "../TalkItem";
 import TalkInfoWrapper from "../TalkInfoWrapper";
-import NavBar from "../RoomNav";
+import FooterNav from "../FooterNav";
 import StyledLink from "../StyledLink";
+import StyledRoom from "../SyledRoom";
 import { useState } from "react";
 
-export default function Room({ talks }) {
+export default function RoomNav({ talks }) {
   const rooms = ["Great Hall", "Liberty Hall", "Metro West"];
   const [roomIndex, setRoomIndex] = useState(0);
 
@@ -43,7 +44,7 @@ export default function Room({ talks }) {
   }
   return (
     <>
-      <h3>{rooms[roomIndex]}</h3>
+      <StyledRoom>{rooms[roomIndex]}</StyledRoom>
       <TalkList>
         {talksInCurrentRoom.map((talk) => (
           <TalkItem key={talk.id}>
@@ -58,11 +59,11 @@ export default function Room({ talks }) {
           </TalkItem>
         ))}
       </TalkList>
-      <NavBar>
+      <FooterNav>
         <button onClick={handlePrevRoomButton}>PREV</button>
         <StyledLink href="/landingPage">Home</StyledLink>
         <button onClick={handleNextRoomButton}>NEXT</button>
-      </NavBar>
+      </FooterNav>
     </>
   );
 }

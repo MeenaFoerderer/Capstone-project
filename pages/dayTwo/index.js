@@ -1,5 +1,5 @@
 import { data } from "../../components/utils/data";
-import Room from "../../components/Room";
+import RoomNav from "../../components/RoomNav";
 import Header from "../../components/Header";
 import StyledLink from "../../components/StyledLink";
 
@@ -14,7 +14,7 @@ function DayTwo() {
         <StyledLink href="#">Donnerstag 24.11.</StyledLink>
         <StyledLink href="/dayThree">Freitag 25.11.</StyledLink>
       </Header>
-      <Room talks={filteredByDay} />
+      <RoomNav talks={filteredByDay} />
     </>
   );
 }
