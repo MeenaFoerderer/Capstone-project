@@ -6,7 +6,7 @@ import StyledLink from "../StyledLink";
 import { useState } from "react";
 
 export default function Room({ talks }) {
-  const rooms = ["Great Hall", "Metro East", "Metro West"];
+  const rooms = ["Great Hall", "Liberty Hall", "Metro West"];
   const [roomIndex, setRoomIndex] = useState(0);
 
   const talksInCurrentRoom = talks
@@ -52,6 +52,7 @@ export default function Room({ talks }) {
             <TalkInfoWrapper>
               <p>{talk.session}</p>
               <p>{talk.day}</p>
+              <p>{talk.date}</p>
               <p>{talk.time}</p>
             </TalkInfoWrapper>
           </TalkItem>

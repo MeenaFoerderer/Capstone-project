@@ -1,15 +1,18 @@
 import { data } from "../../components/utils/data";
 import Room from "../../components/Room";
 import Header from "../../components/Header";
+import StyledLink from "../../components/StyledLink";
 
-const filteredByDay = data.filter((talk) => talk.day === "23.11.");
+const filteredByDay = data.filter((talk) => talk.date === "23.11.2022");
 console.log(filteredByDay);
 
 function DayOne() {
   return (
     <>
       <Header>
-        <h2>Mittwoch 23.11.</h2>
+        <StyledLink href="#">Mittwoch 23.11.</StyledLink>
+        <StyledLink href="/dayTwo">Donnerstag 24.11.</StyledLink>
+        <StyledLink href="/dayThree">Freitag 25.11.</StyledLink>
       </Header>
       <Room talks={filteredByDay} />
     </>

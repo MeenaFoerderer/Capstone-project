@@ -8,6 +8,8 @@ const Header = styled.div`
   right: 0;
   background-color: #fff;
   border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default Header;
