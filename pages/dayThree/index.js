@@ -4,7 +4,6 @@ import Header from "../../components/Header";
 import StyledLink from "../../components/StyledLink";
 
 const filteredByDay = data.filter((talk) => talk.date === "25.11.2022");
-console.log(filteredByDay);
 
 function DayThree() {
   return (
@@ -12,7 +11,9 @@ function DayThree() {
       <Header>
         <StyledLink href="/dayOne">Mittwoch 23.11.</StyledLink>
         <StyledLink href="/dayTwo">Donnerstag 24.11.</StyledLink>
-        <StyledLink href="#">Freitag 25.11.</StyledLink>
+        <StyledLink href="#" style={{ background: "darkgray" }}>
+          Freitag 25.11.
+        </StyledLink>
       </Header>
       <RoomNav talks={filteredByDay} />
     </>

@@ -3,7 +3,7 @@ import TalkItem from "../TalkItem";
 import TalkInfoWrapper from "../TalkInfoWrapper";
 import FooterNav from "../FooterNav";
 import StyledLink from "../StyledLink";
-import StyledRoom from "../SyledRoom";
+import StyledRoom from "../StyledRoom";
 import { useState } from "react";
 
 export default function RoomNav({ talks }) {

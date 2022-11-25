@@ -10,7 +10,9 @@ function DayOne() {
   return (
     <>
       <Header>
-        <StyledLink href="#">Mittwoch 23.11.</StyledLink>
+        <StyledLink href="#" style={{ background: "darkgray" }}>
+          Mittwoch 23.11.
+        </StyledLink>
         <StyledLink href="/dayTwo">Donnerstag 24.11.</StyledLink>
         <StyledLink href="/dayThree">Freitag 25.11.</StyledLink>
       </Header>

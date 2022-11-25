@@ -11,7 +11,9 @@ function DayTwo() {
     <>
       <Header>
         <StyledLink href="/dayOne">Mittwoch 23.11.</StyledLink>
-        <StyledLink href="#">Donnerstag 24.11.</StyledLink>
+        <StyledLink href="#" style={{ background: "darkgray" }}>
+          Donnerstag 24.11.
+        </StyledLink>
         <StyledLink href="/dayThree">Freitag 25.11.</StyledLink>
       </Header>
       <RoomNav talks={filteredByDay} />
