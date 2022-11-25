@@ -9,9 +9,20 @@ export default function Room({ talks }) {
   const rooms = ["Great Hall", "Metro East", "Metro West"];
   const [roomIndex, setRoomIndex] = useState(0);
 
-  const talksInCurrentRoom = talks.filter(
-    (talk) => talk.room === rooms[roomIndex]
-  );
+  const talksInCurrentRoom = talks
+    .filter((talk) => talk.room === rooms[roomIndex])
+    .sort((a, b) => {
+      let timeA = a.time;
+      let timeB = b.time;
+
+      return timeA < timeB ? -1 : 1;
+    })
+    .sort((a, b) => {
+      let sessionA = a.session;
+      let sessionB = b.session;
+
+      return sessionA < sessionB ? -1 : 1;
+    });
 
   function handleNextRoomButton() {
     if (roomIndex < rooms.length - 1) {
