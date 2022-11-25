@@ -7,7 +7,7 @@ import StyledRoom from "../RoomHeadline";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function RoomNav({ talks }) {
+function TalksPerRoom({ talks }) {
   const rooms = ["Great Hall", "Liberty Hall", "Metro West"];
   const [roomIndex, setRoomIndex] = useState(0);
 
@@ -84,3 +84,5 @@ const StyledTalkTitle = styled.h2`
 const StyledSpeakerName = styled.h3`
   font-size: 1rem;
 `;
+
+export default TalksPerRoom;
