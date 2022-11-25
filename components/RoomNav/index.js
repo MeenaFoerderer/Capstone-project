@@ -5,6 +5,7 @@ import FooterNav from "../FooterNav";
 import StyledLink from "../StyledLink";
 import StyledRoom from "../StyledRoom";
 import { useState } from "react";
+import styled from "styled-components";
 
 export default function RoomNav({ talks }) {
   const rooms = ["Great Hall", "Liberty Hall", "Metro West"];
@@ -45,20 +46,22 @@ export default function RoomNav({ talks }) {
   return (
     <>
       <StyledRoom>{rooms[roomIndex]}</StyledRoom>
-      <TalkList>
-        {talksInCurrentRoom.map((talk) => (
-          <TalkItem key={talk.id}>
-            <h4>{talk.title}</h4>
-            <h5>{talk.authors[0]}</h5>
-            <TalkInfoWrapper>
-              <p>{talk.session}</p>
-              <p>{talk.day}</p>
-              <p>{talk.date}</p>
-              <p>{talk.time}</p>
-            </TalkInfoWrapper>
-          </TalkItem>
-        ))}
-      </TalkList>
+      <ListContainer>
+        <TalkList>
+          {talksInCurrentRoom.map((talk) => (
+            <TalkItem key={talk.id}>
+              <h4>{talk.title}</h4>
+              <h5>{talk.authors[0]}</h5>
+              <TalkInfoWrapper>
+                <p>{talk.session}</p>
+                <p>{talk.day}</p>
+                <p>{talk.date}</p>
+                <p>{talk.time}</p>
+              </TalkInfoWrapper>
+            </TalkItem>
+          ))}
+        </TalkList>
+      </ListContainer>
       <FooterNav>
         <button onClick={handlePrevRoomButton}>PREV</button>
         <StyledLink href="/landingPage">Home</StyledLink>
@@ -67,3 +70,9 @@ export default function RoomNav({ talks }) {
     </>
   );
 }
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

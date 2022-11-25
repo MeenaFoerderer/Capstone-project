@@ -5,6 +5,7 @@ const TalkList = styled.ul`
   width: 400px;
   padding: 0;
   margin: 3.6em 0;
+  display: inline-block;
 `;
 
 export default TalkList;
