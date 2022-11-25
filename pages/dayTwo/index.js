@@ -4,7 +4,6 @@ import Header from "../../components/Header";
 import StyledLink from "../../components/StyledLink";
 
 const filteredByDay = data.filter((talk) => talk.date === "24.11.2022");
-console.log(filteredByDay);
 
 function DayTwo() {
   return (
