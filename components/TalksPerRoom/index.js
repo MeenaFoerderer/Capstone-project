@@ -6,6 +6,7 @@ import StyledLink from "../StyledLink";
 import StyledRoom from "../RoomHeadline";
 import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 function TalksPerRoom({ talks }) {
   const rooms = ["Great Hall", "Liberty Hall", "Metro West"];
@@ -49,16 +50,18 @@ function TalksPerRoom({ talks }) {
       <ListContainer>
         <TalkList>
           {talksInCurrentRoom.map((talk) => (
-            <TalkItem key={talk.id}>
-              <StyledTalkTitle>{talk.title}</StyledTalkTitle>
-              <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
-              <TalkInfoWrapper>
-                <p>{talk.session}</p>
-                <p>{talk.day}</p>
-                <p>{talk.date}</p>
-                <p>{talk.time}</p>
-              </TalkInfoWrapper>
-            </TalkItem>
+            <Link key={talk.id} href={`/talks/${talk.id}`}>
+              <TalkItem>
+                <StyledTalkTitle>{talk.title}</StyledTalkTitle>
+                <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
+                <TalkInfoWrapper>
+                  <p>{talk.session}</p>
+                  <p>{talk.day}</p>
+                  <p>{talk.date}</p>
+                  <p>{talk.time}</p>
+                </TalkInfoWrapper>
+              </TalkItem>
+            </Link>
           ))}
         </TalkList>
       </ListContainer>
