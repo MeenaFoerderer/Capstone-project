@@ -50,7 +50,7 @@ function TalksPerRoom({ talks }) {
       <ListContainer>
         <TalkList>
           {talksInCurrentRoom.map((talk) => (
-            <Link key={talk.id} href={`/talks/${talk.id}`} title={talk.title}>
+            <Link key={talk.id} href={`/talks/${talk.id}`}>
               <TalkItem>
                 <StyledTalkTitle>{talk.title}</StyledTalkTitle>
                 <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>

@@ -6,7 +6,7 @@ function TalkDetails() {
   const router = useRouter();
   const { id } = router.query;
   const singleTalk = data.find((talk) => talk.id === id);
-
+  if (!id) return;
   return (
     <StyledMain>
       <StyledBackRoute onClick={() => router.back()}>Back</StyledBackRoute>
