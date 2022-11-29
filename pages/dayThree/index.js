@@ -1,4 +1,4 @@
-import { data } from "../../components/utils/data";
+import { data } from "../../helpers/data";
 import RoomNav from "../../components/TalksPerRoom";
 import Header from "../../components/Header";
 import StyledLink from "../../components/StyledLink";
