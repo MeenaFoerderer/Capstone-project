@@ -7,6 +7,8 @@ import { dateFromNormalizedString } from "../../../../helpers/normalize";
 function TalkDetails() {
   const router = useRouter();
   const { date, room, id } = router.query;
+  if (!id || !date || !room) return;
+
   const {
     title,
     authors,
@@ -16,8 +18,6 @@ function TalkDetails() {
     date: talkDate,
     time,
   } = data.find((talk) => talk.id === id);
-
-  if (!id || !date || !room) return;
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
     "de-DE",
