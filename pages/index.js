@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import StyledLink from "../components/StyledLink";
+import { normalizeDate, normalizeRooms } from "../helpers/normalize";
 
 function LandingPage({ conferenceDays, conferenceRooms }) {
   return (
@@ -7,7 +8,11 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <NavWrapper>
         <StyledLink href="/infoPage">Info</StyledLink>
-        <StyledLink href={`/${conferenceDays[0]}/${conferenceRooms[0]}`}>
+        <StyledLink
+          href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
+            conferenceRooms[0]
+          )}`}
+        >
           Schedule
         </StyledLink>
       </NavWrapper>
