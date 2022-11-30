@@ -17,7 +17,7 @@ function TalkDetails() {
     time,
   } = data.find((talk) => talk.id === id);
 
-  if (!id) return;
+  if (!id || !date || !room) return;
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
     "de-DE",
