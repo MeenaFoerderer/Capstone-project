@@ -23,7 +23,7 @@ function InfoPage() {
       <h3>EDITORS</h3>
       <p>Dana J. Ehret, Andrew A. Farke, Ethan Fulwood</p>
       <LinkFlexContainer>
-        <StyledLink href="/landingPage">Home</StyledLink>
+        <StyledLink href={"/"}>Home</StyledLink>
       </LinkFlexContainer>
     </InfoContainer>
   );
