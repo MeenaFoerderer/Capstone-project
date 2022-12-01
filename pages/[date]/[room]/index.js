@@ -9,7 +9,13 @@ import StyledLink from "../../../components/StyledLink";
 import styled from "styled-components";
 import Link from "next/link";
 
-function Room({ conferenceDays, conferenceRooms, talks }) {
+function Room({
+  conferenceDays,
+  conferenceRooms,
+  talks,
+  setContributions,
+  contributions,
+}) {
   const router = useRouter();
   const { date, room } = router.query;
 
@@ -45,13 +51,26 @@ function Room({ conferenceDays, conferenceRooms, talks }) {
     ]
   );
 
-  const filteredTalks = talks
+  const filteredTalks = contributions
     .filter((talk) => {
       const newDate = dateFromNormalizedString(talk.date);
       return normalizeDate(newDate) === date;
     })
     .filter((talk) => normalizeRooms(talk.room) === room);
 
+  function toggleFavorite(id) {
+    const newTalksArray = contributions.map((contribution) => {
+      if (contribution.id === id) {
+        return {
+          ...contribution,
+          isBookmarked: !contribution.isBookmarked,
+        };
+      } else {
+        return contribution;
+      }
+    });
+    setContributions(newTalksArray);
+  }
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
@@ -59,22 +78,27 @@ function Room({ conferenceDays, conferenceRooms, talks }) {
       <ListContainer>
         <TalkList>
           {filteredTalks.map((talk) => (
-            <StyledTalkLink
-              key={talk.id}
-              href={`/${date}/${room}/talks/${talk.id}`}
-            >
-              <TalkItem>
+            <TalkItem key={talk.id}>
+              <Button
+                type={"button"}
+                onClick={() => {
+                  toggleFavorite(talk.id);
+                }}
+              >
+                {talk.isBookmarked ? <p>yes</p> : <p>NO</p>}
+              </Button>
+              <StyledTalkLink href={`/${date}/${room}/talks/${talk.id}`}>
                 <StyledTalkTitle>{`${talk.title.substring(
                   0,
                   25
                 )}...`}</StyledTalkTitle>
-                <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
-                <TalkInfoWrapper>
-                  <p>{talk.session}</p>
-                  <p>{talk.time}</p>
-                </TalkInfoWrapper>
-              </TalkItem>
-            </StyledTalkLink>
+              </StyledTalkLink>
+              <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
+              <TalkInfoWrapper>
+                <p>{talk.session}</p>
+                <p>{talk.time}</p>
+              </TalkInfoWrapper>
+            </TalkItem>
           ))}
         </TalkList>
       </ListContainer>
@@ -86,6 +110,20 @@ function Room({ conferenceDays, conferenceRooms, talks }) {
     </>
   );
 }
+
+const Button = styled.button`
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: -5px;
+    margin-right: -10px;
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 3px;
+    
+    &:hover {
+    background-color: transparent;
+`;
 
 const Header = styled.div`
   text-align: center;

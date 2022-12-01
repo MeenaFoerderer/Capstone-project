@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
 
-function TalkDetails() {
+function TalkDetails({ contributions }) {
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -17,7 +17,7 @@ function TalkDetails() {
     day,
     date: talkDate,
     time,
-  } = data.find((talk) => talk.id === id);
+  } = contributions.find((talk) => talk.id === id);
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
     "de-DE",
