@@ -4,10 +4,7 @@ import { dateFromNormalizedString } from "../helpers/normalize";
 import { useLocalStorage } from "../helpers/hooks";
 
 function MyApp({ Component, pageProps }) {
-  const [contributions, setContributions] = useLocalStorage(
-    "contributions",
-    data
-  );
+  const [talks, setTalks] = useLocalStorage("talks", data);
 
   const conferenceDays = Array.from(new Set(data.map((talk) => talk.date)))
     .map((date) => dateFromNormalizedString(date))
@@ -24,9 +21,8 @@ function MyApp({ Component, pageProps }) {
         {...pageProps}
         conferenceDays={conferenceDays}
         conferenceRooms={conferenceRooms}
-        talks={data}
-        contributions={contributions}
-        setContributions={setContributions}
+        talks={talks}
+        setTalks={setTalks}
       />
     </>
   );

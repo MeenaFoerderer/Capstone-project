@@ -3,12 +3,17 @@ import { data } from "../../../../helpers/data";
 import styled from "styled-components";
 import Link from "next/link";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import {
+  BookmarkActive,
+  BookmarkInactive,
+} from "../../../../components/BookmarkIcons";
+import { TfiEmail } from "react-icons/tfi";
 
-function TalkDetails({ contributions }) {
+function TalkDetails({ talks }) {
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
-
   const {
     title,
     authors,
@@ -17,26 +22,63 @@ function TalkDetails({ contributions }) {
     day,
     date: talkDate,
     time,
-  } = contributions.find((talk) => talk.id === id);
+  } = talks.find((talk) => talk.id === id);
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
     "de-DE",
     { weekday: "long", day: "numeric", month: "numeric", year: "numeric" }
   );
 
+  const firstAuthor = authors[0];
+  const coAuthors = ` ${authors.slice(1).join(", ")}`;
+
+  function toggleFavorite(id) {
+    const newTalksArray = talks.map((talk) => {
+      if (talk.id === id) {
+        return {
+          ...talk,
+          isBookmarked: !talk.isBookmarked,
+        };
+      } else {
+        return talk;
+      }
+    });
+    setTalks(newTalksArray);
+  }
+
   return (
     <StyledMain>
-      <StyledBackRoute href={`/${date}/${room}/`}>Back</StyledBackRoute>
-      <article>
+      <StyledArticle>
+        <IconWrapper>
+          <Link href={`/${date}/${room}/`}>
+            <CloseIcon />
+          </Link>
+          <Button
+            type={"button"}
+            onClick={() => {
+              toggleFavorite(talk.id);
+            }}
+          >
+            {talk.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
+          </Button>
+        </IconWrapper>
         <StyledTitle>{title}</StyledTitle>
-        <StyledAuthorList>{authors.join(", ")}</StyledAuthorList>
+        <StyledAuthorList>
+          <StyledFirstAuthor
+            href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+          >
+            {firstAuthor}
+            <MailIcon />
+          </StyledFirstAuthor>
+          {coAuthors}
+        </StyledAuthorList>
         <StyledAbstract>{abstract}</StyledAbstract>
+        <StyledSession>{session}</StyledSession>
         <InfoContainer>
-          <li>{session}</li>
           <li>{dateWithWeekday}</li>
           <li>{time}</li>
         </InfoContainer>
-      </article>
+      </StyledArticle>
     </StyledMain>
   );
 }
@@ -46,37 +88,76 @@ const StyledMain = styled.div`
   padding: 0 2em;
 `;
 
-const StyledBackRoute = styled(Link)`
-  text-decoration: none;
-  color: black;
-  width: 5em;
-  height: 3.5em;
-  padding: 1em 3em;
-  border-radius: 5px;
-  border: none;
-  background-color: #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const IconWrapper = styled.div`
+display: flex:
+justify-content: space-between;
+`;
+
+const CloseIcon = styled(IoCloseCircleOutline)`
+  font-size: 2.5em;
+  color: #6b6b6b;
+`;
+
+const StyledArticle = styled.article`
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  margin-top: 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 `;
 
 const StyledAuthorList = styled.h2`
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+`;
+
+const StyledFirstAuthor = styled.a`
+  background-color: #f5f5f5;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1d1d1d;
+`;
+
+const MailIcon = styled(TfiEmail)`
+  margin-left: 0.3em;
+  color: #1d1d1d;
 `;
 
 const StyledAbstract = styled.p`
   text-align: justify;
+  font-size: 0.9rem;
 `;
+
+const StyledSession = styled.p`
+  font-size: 0.9rem;
+  background: pink;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  display: inline;
+`;
+
 const InfoContainer = styled.ul`
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   list-style: none;
   padding: 0;
+`;
+
+const Button = styled.button`
+    background-color: transparent;
+    margin-top: -5px;
+    margin-right: -10px;
+    border: none;
+    
+    &:hover {
+    background-color: transparent;
 `;
 
 export default TalkDetails;

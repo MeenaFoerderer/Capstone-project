@@ -7,8 +7,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
     <LandingPageContainer>
       <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
       <NavWrapper>
-        <StyledLink href="/infoPage">Info</StyledLink>
-        <StyledLink href="/favorites">Favorites</StyledLink>
+        <StyledLink href="/bookmarks">Bookmarks</StyledLink>
         <StyledLink
           href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
             conferenceRooms[0]
