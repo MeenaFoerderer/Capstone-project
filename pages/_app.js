@@ -14,6 +14,13 @@ function MyApp({ Component, pageProps }) {
     new Set(data.map((talk) => talk.room))
   ).sort();
 
+  function handleBookmarkToggle(id) {
+    const updatedTalks = talks.map((talk) =>
+      talk.id === id ? { ...talk, isBookmarked: !talk.isBookmarked } : talk
+    );
+    setTalks(updatedTalks);
+  }
+
   return (
     <>
       <GlobalStyles />
@@ -22,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         conferenceDays={conferenceDays}
         conferenceRooms={conferenceRooms}
         talks={talks}
-        setTalks={setTalks}
+        onBookmarkToggle={handleBookmarkToggle}
       />
     </>
   );

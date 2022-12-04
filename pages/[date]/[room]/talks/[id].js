@@ -10,7 +10,7 @@ import {
 } from "../../../../components/BookmarkIcons";
 import { TfiEmail } from "react-icons/tfi";
 
-function TalkDetails({ talks }) {
+function TalkDetails({ talks, onBookmarkToggle }) {
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -22,6 +22,7 @@ function TalkDetails({ talks }) {
     day,
     date: talkDate,
     time,
+    isBookmarked,
   } = talks.find((talk) => talk.id === id);
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
@@ -31,20 +32,6 @@ function TalkDetails({ talks }) {
 
   const firstAuthor = authors[0];
   const coAuthors = ` ${authors.slice(1).join(", ")}`;
-
-  function toggleFavorite(id) {
-    const newTalksArray = talks.map((talk) => {
-      if (talk.id === id) {
-        return {
-          ...talk,
-          isBookmarked: !talk.isBookmarked,
-        };
-      } else {
-        return talk;
-      }
-    });
-    setTalks(newTalksArray);
-  }
 
   return (
     <StyledMain>
@@ -56,10 +43,10 @@ function TalkDetails({ talks }) {
           <Button
             type={"button"}
             onClick={() => {
-              toggleFavorite(talk.id);
+              onBookmarkToggle(talks.id);
             }}
           >
-            {talk.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
+            {talks.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
           </Button>
         </IconWrapper>
         <StyledTitle>{title}</StyledTitle>

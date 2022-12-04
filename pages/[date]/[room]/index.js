@@ -19,7 +19,7 @@ import {
   BsCalendar4Week,
 } from "react-icons/bs";
 
-function Room({ conferenceDays, conferenceRooms, talks, setTalks }) {
+function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
   const { date, room } = router.query;
 
@@ -62,20 +62,6 @@ function Room({ conferenceDays, conferenceRooms, talks, setTalks }) {
     })
     .filter((talk) => normalizeRooms(talk.room) === room);
 
-  function toggleFavorite(id) {
-    const newTalksArray = talks.map((talk) => {
-      if (talk.id === id) {
-        return {
-          ...talk,
-          isBookmarked: !talk.isBookmarked,
-        };
-      } else {
-        return talk;
-      }
-    });
-    setTalks(newTalksArray);
-  }
-
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
@@ -97,7 +83,7 @@ function Room({ conferenceDays, conferenceRooms, talks, setTalks }) {
                 <Button
                   type={"button"}
                   onClick={() => {
-                    toggleFavorite(talk.id);
+                    onBookmarkToggle(talk.id);
                   }}
                 >
                   {talk.isBookmarked ? (
