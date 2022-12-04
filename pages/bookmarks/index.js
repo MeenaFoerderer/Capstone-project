@@ -1,34 +1,15 @@
 import StyledLink from "../../components/StyledLink";
 import styled from "styled-components";
 
-function FavoriteTalks({ talks, setTalks }) {
-  function toggleFavorite(id) {
-    const newTalksArray = talks.map((talk) => {
-      if (talk.id === id) {
-        return {
-          ...talk,
-          isBookmarked: !talk.isBookmarked,
-        };
-      } else {
-        return talk;
-      }
-    });
-
-    setTalks(newTalksArray);
-  }
-
+function FavoriteTalks({ talks }) {
   return (
     <>
       <h1>My Talks List</h1>
 
       <ul>
-        {talks?.map((talk) => {
-          if (talk.isBookmarked === true) {
-            return <li toggleFavorite={toggleFavorite}>{talk.title}</li>;
-          } else {
-            return null;
-          }
-        })}
+        {talks.map(
+          (talk) => talk.isBookmarked && <li key={talk.id}>{talk.title}</li>
+        )}
       </ul>
 
       <LinkFlexContainer>

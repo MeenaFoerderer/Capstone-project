@@ -22,6 +22,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
     day,
     date: talkDate,
     time,
+    id: talkId,
     isBookmarked,
   } = talks.find((talk) => talk.id === id);
 
@@ -43,10 +44,10 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           <Button
             type={"button"}
             onClick={() => {
-              onBookmarkToggle(talks.id);
+              onBookmarkToggle(talkId);
             }}
           >
-            {talks.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
+            {isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
           </Button>
         </IconWrapper>
         <StyledTitle>{title}</StyledTitle>
@@ -76,8 +77,8 @@ const StyledMain = styled.div`
 `;
 
 const IconWrapper = styled.div`
-display: flex:
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const CloseIcon = styled(IoCloseCircleOutline)`
@@ -138,13 +139,14 @@ const InfoContainer = styled.ul`
 `;
 
 const Button = styled.button`
+  background-color: transparent;
+  margin-top: -5px;
+  margin-right: -10px;
+  border: none;
+
+  &:hover {
     background-color: transparent;
-    margin-top: -5px;
-    margin-right: -10px;
-    border: none;
-    
-    &:hover {
-    background-color: transparent;
+  }
 `;
 
 export default TalkDetails;

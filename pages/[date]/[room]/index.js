@@ -131,6 +131,7 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 
 const DateLink = styled(Link)`
   background-color: #2a384f;
+  _background-color: #1f2937;
   color: white;
   text-decoration: none;
   width: 8em;
@@ -144,13 +145,14 @@ const DateLink = styled(Link)`
 `;
 
 const Button = styled.button`
+  background-color: transparent;
+  margin-top: 0.5em;
+  margin-right: -0.8em;
+  border: none;
+
+  &:hover {
     background-color: transparent;
-    margin-top: -5px;
-    margin-right: -10px;
-    border: none;
-    
-    &:hover {
-    background-color: transparent;
+  }
 `;
 
 const Header = styled.div`
@@ -233,10 +235,13 @@ const TalkInfoWrapper = styled.div`
 
 const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 0;
 `;
 
 const StyledSpeakerName = styled.h3`
   font-size: 1rem;
+  margin: 1em 0;
 `;
 
 const FooterLink = styled(Link)`
