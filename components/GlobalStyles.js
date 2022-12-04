@@ -19,9 +19,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        padding-top: 50px;
         color: #1d1d1d;
-        background-color: #f5f5f5;
+        background-color: #E5E7EB;
     }
 
     main {

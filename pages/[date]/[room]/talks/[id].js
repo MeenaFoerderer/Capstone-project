@@ -73,7 +73,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
 
 const StyledMain = styled.div`
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 1em;
 `;
 
 const IconWrapper = styled.div`

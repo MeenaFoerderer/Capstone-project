@@ -1,37 +1,66 @@
 import styled from "styled-components";
-import StyledLink from "../components/StyledLink";
+import Link from "next/link";
 import { normalizeDate, normalizeRooms } from "../helpers/normalize";
+import { BsCalendar4Week } from "react-icons/bs";
 
 function LandingPage({ conferenceDays, conferenceRooms }) {
   return (
     <LandingPageContainer>
-      <h1>Welcome to Jurassic Talk 2022 Toronto</h1>
-      <NavWrapper>
-        <StyledLink href="/bookmarks">Bookmarks</StyledLink>
-        <StyledLink
-          href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
-            conferenceRooms[0]
-          )}`}
-        >
-          Schedule
-        </StyledLink>
-      </NavWrapper>
+      <LandingTitle>
+        <LightText>ProEvent presents </LightText>JURASSIC TALK 2022 Toronto
+      </LandingTitle>
+      <ScheduleLink
+        href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
+          conferenceRooms[0]
+        )}`}
+      >
+        <StyledCalendarIcon />
+        Conference Schedule
+      </ScheduleLink>
     </LandingPageContainer>
   );
 }
 
 const LandingPageContainer = styled.div`
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   padding: 3em;
-`;
-
-const NavWrapper = styled.nav`
+  width: 100vw;
+  height: 100vh;
+  background-color: #2a384f;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LandingTitle = styled.h1`
+  color: #4adf86;
+  margin: 2em 0;
+  font-size: 1.9rem;
+`;
+
+const LightText = styled.span`
+  color: #fff;
+  font-size: 1.6rem;
+`;
+
+const ScheduleLink = styled(Link)`
+  width: 100%;
+  height: 3em;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
-  gap: 1em;
-  margin-top: 6em;
+  justify-content: center;
+  background-color: #ecfdf5;
+  text-decoration: none;
+  color: #2a384f;
+  font-size: 1.1rem;
+  font-weight: bold;
+`;
+
+const StyledCalendarIcon = styled(BsCalendar4Week)`
+  margin-right: 0.5em;
+  font-size: 1.3rem;
 `;
 
 export default LandingPage;

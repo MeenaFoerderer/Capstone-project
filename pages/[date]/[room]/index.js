@@ -4,7 +4,6 @@ import {
   normalizeDate,
   dateFromNormalizedString,
 } from "../../../helpers/normalize";
-import FooterNav from "../../../components/FooterNav";
 import styled from "styled-components";
 import Link from "next/link";
 import {
@@ -15,8 +14,6 @@ import {
   BsArrowLeftSquare,
   BsArrowRightSquare,
   BsHouseDoor,
-  BsJournalBookmarkFill,
-  BsCalendar4Week,
 } from "react-icons/bs";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
@@ -108,18 +105,12 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
           <PrevRoomIcon />
           <LinkText>Room</LinkText>
         </FooterLink>
-        <FooterLink href={"#"}>
-          <CalendarIcon />
-          <LinkText>Schedule</LinkText>
-        </FooterLink>
+
         <FooterLink href={"/"}>
           <HomeIcon />
           <LinkText>Home</LinkText>
         </FooterLink>
-        <FooterLink href={"/bookmarks"}>
-          <BookmarkIcon />
-          <LinkText>Bookmarks</LinkText>
-        </FooterLink>
+
         <FooterLink href={`/${date}/${conferenceNextRoom}`}>
           <NextRoomIcon />
           <LinkText>Room</LinkText>
@@ -131,8 +122,7 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 
 const DateLink = styled(Link)`
   background-color: #2a384f;
-  _background-color: #1f2937;
-  color: white;
+  color: #ecfdf5;
   text-decoration: none;
   width: 8em;
   height: 3.5em;
@@ -175,11 +165,11 @@ const RoomHeadlineContainer = styled.div`
   width: 100%;
   top: 3.5em;
   height: 4em;
-  background: rgb(245, 245, 245);
+  background: rgb(229, 231, 235);
   background: linear-gradient(
     0deg,
-    rgba(245, 245, 245, 0.053658963585434205) 0%,
-    rgba(245, 245, 245, 1) 86%
+    rgba(229, 231, 235, 0) 0%,
+    rgba(229, 231, 235, 1) 86%
   );
 `;
 
@@ -192,14 +182,14 @@ const RoomHeadline = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3em;
 `;
 
 const TalkList = styled.ul`
@@ -244,6 +234,21 @@ const StyledSpeakerName = styled.h3`
   margin: 1em 0;
 `;
 
+const FooterNav = styled.nav`
+  background-color: #2a384f;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  height: 4em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.7em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
 const FooterLink = styled(Link)`
   display: flex;
   flex-direction: column;
@@ -255,33 +260,23 @@ const FooterLink = styled(Link)`
 
 const LinkText = styled.p`
   font-size: 0.85rem;
-  margin: 0;
-  color: #959596;
+  margin: 0.1em 0 0 0;
+  color: #f5f5f5;
 `;
 
 const PrevRoomIcon = styled(BsArrowLeftSquare)`
   font-size: 2em;
-  color: #959596;
+  color: #f5f5f5;
 `;
 
 const NextRoomIcon = styled(BsArrowRightSquare)`
   font-size: 2em;
-  color: #959596;
+  color: #f5f5f5;
 `;
 
 const HomeIcon = styled(BsHouseDoor)`
   font-size: 2.5em;
-  color: #959596;
-`;
-
-const BookmarkIcon = styled(BsJournalBookmarkFill)`
-  font-size: 2em;
-  color: #959596;
-`;
-
-const CalendarIcon = styled(BsCalendar4Week)`
-  font-size: 2em;
-  color: #959596;
+  color: #f5f5f5;
 `;
 
 export default Room;
