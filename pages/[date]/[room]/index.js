@@ -78,11 +78,8 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
         </TalkList>
       </ListContainer>
       <FooterNav>
-        <FooterLink
-          aria-label="previous room button"
-          href={`/${date}/${conferencePrevRoom}`}
-        >
-          <PrevRoomIcon />
+        <FooterLink href={`/${date}/${conferencePrevRoom}`}>
+          <PrevRoomIcon aria-label="previous room button" />
           <LinkText>Room</LinkText>
         </FooterLink>
         <FooterLink href={"/"}>
@@ -93,11 +90,8 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
           <BookmarkIcon />
           <LinkText>Bookmarks</LinkText>
         </FooterLink>
-        <FooterLink
-          aria-label="next room button"
-          href={`/${date}/${conferenceNextRoom}`}
-        >
-          <NextRoomIcon />
+        <FooterLink href={`/${date}/${conferenceNextRoom}`}>
+          <NextRoomIcon aria-label="next room button" />
           <LinkText>Room</LinkText>
         </FooterLink>
       </FooterNav>
