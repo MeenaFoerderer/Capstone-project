@@ -7,7 +7,6 @@ import {
   BookmarkIcon,
 } from "../../../../components/FooterNav";
 import styled from "styled-components";
-import Link from "next/link";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import {
@@ -45,18 +44,17 @@ function TalkDetails({ talks, onBookmarkToggle }) {
       <StyledMain>
         <StyledArticle>
           <IconWrapper>
-            <Link href={`/${date}/${room}/`}>
+            <BackButton aria-label="back button" onClick={() => router.back()}>
               <CloseIcon />
-            </Link>
-
-            <Button
+            </BackButton>
+            <ToggleButton
               type={"button"}
               onClick={() => {
                 onBookmarkToggle(talkId);
               }}
             >
               {isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
-            </Button>
+            </ToggleButton>
           </IconWrapper>
           <StyledTitle>{title}</StyledTitle>
           <StyledAuthorList>
@@ -157,7 +155,7 @@ const InfoContainer = styled.ul`
   padding: 0;
 `;
 
-const Button = styled.button`
+const ToggleButton = styled.button`
   background-color: transparent;
   margin-top: -5px;
   margin-right: -10px;
@@ -166,6 +164,11 @@ const Button = styled.button`
   &:hover {
     background-color: transparent;
   }
+`;
+
+const BackButton = styled.button`
+  background-color: transparent;
+  border: none;
 `;
 
 export default TalkDetails;
