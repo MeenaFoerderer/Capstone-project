@@ -9,15 +9,15 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
       <LandingTitle>
         <LightText>ProEvent presents </LightText>JURASSIC TALK 2022 Toronto
       </LandingTitle>
-      <ScheduleLink
+      <NavigationLink
         href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
           conferenceRooms[0]
         )}`}
       >
         <StyledCalendarIcon />
         Conference Schedule
-      </ScheduleLink>
-      <ScheduleLink href={"../bookmarks"}>Bookmarks</ScheduleLink>
+      </NavigationLink>
+      <NavigationLink href={"../bookmarks"}>Bookmarks</NavigationLink>
     </LandingPageContainer>
   );
 }
@@ -45,7 +45,7 @@ const LightText = styled.span`
   font-size: 1.6rem;
 `;
 
-const ScheduleLink = styled(Link)`
+const NavigationLink = styled(Link)`
   width: 100%;
   height: 3em;
   border-radius: 5px;

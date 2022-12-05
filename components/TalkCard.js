@@ -17,6 +17,7 @@ function TalkCard({ talk, onBookmarkToggle }) {
           )}...`}</StyledTalkTitle>
         </StyledTalkLink>
         <Button
+          aria-label="toggle bookmark button"
           type={"button"}
           onClick={() => {
             onBookmarkToggle(talk.id);

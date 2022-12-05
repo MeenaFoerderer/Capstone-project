@@ -48,6 +48,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
               <CloseIcon />
             </BackButton>
             <ToggleButton
+              aria-label="toggle bookmark button"
               type={"button"}
               onClick={() => {
                 onBookmarkToggle(talkId);
