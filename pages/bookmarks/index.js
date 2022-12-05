@@ -30,8 +30,6 @@ function Bookmarks({
                 key={talk.id}
                 talk={talk}
                 onBookmarkToggle={onBookmarkToggle}
-                date={date}
-                room={room}
               />
             )
         )}

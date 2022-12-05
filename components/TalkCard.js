@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { BookmarkActive, BookmarkInactive } from "./BookmarkIcons";
+import { normalizeRooms } from "../helpers/normalize";
 
-function TalkCard({ date, room, talk, onBookmarkToggle }) {
+function TalkCard({ talk, onBookmarkToggle }) {
+  const date = talk.date.replaceAll(".", "-");
+  const room = normalizeRooms(talk.room);
+
   return (
     <TalkItem>
       <StyledDiv>
