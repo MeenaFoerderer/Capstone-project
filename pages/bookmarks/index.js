@@ -1,11 +1,26 @@
-import StyledLink from "../../components/StyledLink";
 import styled from "styled-components";
 import TalkCard from "../../components/TalkCard";
+import { normalizeDate, normalizeRooms } from "../../helpers/normalize";
+import {
+  FooterLink,
+  FooterNav,
+  LinkText,
+  HomeIcon,
+  BookmarkIcon,
+  CalendarIcon,
+} from "../../components/FooterNav";
 
-function Bookmarks({ talks, onBookmarkToggle, date, room }) {
+function Bookmarks({
+  talks,
+  onBookmarkToggle,
+  date,
+  room,
+  conferenceDays,
+  conferenceRooms,
+}) {
   return (
     <>
-      <h1>My Talks List</h1>
+      <h1>Bookmarks</h1>
 
       <TalkList>
         {talks.map(
@@ -22,17 +37,23 @@ function Bookmarks({ talks, onBookmarkToggle, date, room }) {
         )}
       </TalkList>
 
-      <LinkFlexContainer>
-        <StyledLink href={"/"}>Home</StyledLink>
-      </LinkFlexContainer>
+      <FooterNav>
+        <FooterLink href={"/"}>
+          <HomeIcon />
+          <LinkText>Home</LinkText>
+        </FooterLink>
+        <FooterLink
+          href={`/${normalizeDate(conferenceDays[0])}/${normalizeRooms(
+            conferenceRooms[0]
+          )}`}
+        >
+          <CalendarIcon />
+          <LinkText>Schedule</LinkText>
+        </FooterLink>
+      </FooterNav>
     </>
   );
 }
-
-const LinkFlexContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 const TalkList = styled.ul`
   list-style: none;

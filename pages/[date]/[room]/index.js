@@ -82,7 +82,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
           <PrevRoomIcon />
           <LinkText>Room</LinkText>
         </FooterLink>
-
         <FooterLink href={"/"}>
           <HomeIcon />
           <LinkText>Home</LinkText>

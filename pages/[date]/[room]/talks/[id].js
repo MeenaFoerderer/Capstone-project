@@ -1,5 +1,11 @@
 import { useRouter } from "next/router";
-import { data } from "../../../../helpers/data";
+import {
+  FooterLink,
+  FooterNav,
+  LinkText,
+  HomeIcon,
+  BookmarkIcon,
+} from "../../../../components/FooterNav";
 import styled from "styled-components";
 import Link from "next/link";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
@@ -35,39 +41,52 @@ function TalkDetails({ talks, onBookmarkToggle }) {
   const coAuthors = ` ${authors.slice(1).join(", ")}`;
 
   return (
-    <StyledMain>
-      <StyledArticle>
-        <IconWrapper>
-          <Link href={`/${date}/${room}/`}>
-            <CloseIcon />
-          </Link>
-          <Button
-            type={"button"}
-            onClick={() => {
-              onBookmarkToggle(talkId);
-            }}
-          >
-            {isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
-          </Button>
-        </IconWrapper>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledAuthorList>
-          <StyledFirstAuthor
-            href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
-          >
-            {firstAuthor}
-            <MailIcon />
-          </StyledFirstAuthor>
-          {coAuthors}
-        </StyledAuthorList>
-        <StyledAbstract>{abstract}</StyledAbstract>
-        <StyledSession>{session}</StyledSession>
-        <InfoContainer>
-          <li>{dateWithWeekday}</li>
-          <li>{time}</li>
-        </InfoContainer>
-      </StyledArticle>
-    </StyledMain>
+    <>
+      <StyledMain>
+        <StyledArticle>
+          <IconWrapper>
+            <Link href={`/${date}/${room}/`}>
+              <CloseIcon />
+            </Link>
+
+            <Button
+              type={"button"}
+              onClick={() => {
+                onBookmarkToggle(talkId);
+              }}
+            >
+              {isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
+            </Button>
+          </IconWrapper>
+          <StyledTitle>{title}</StyledTitle>
+          <StyledAuthorList>
+            <StyledFirstAuthor
+              href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+            >
+              {firstAuthor}
+              <MailIcon />
+            </StyledFirstAuthor>
+            {coAuthors}
+          </StyledAuthorList>
+          <StyledAbstract>{abstract}</StyledAbstract>
+          <StyledSession>{session}</StyledSession>
+          <InfoContainer>
+            <li>{dateWithWeekday}</li>
+            <li>{time}</li>
+          </InfoContainer>
+        </StyledArticle>
+      </StyledMain>
+      <FooterNav>
+        <FooterLink href={"/"}>
+          <HomeIcon />
+          <LinkText>Home</LinkText>
+        </FooterLink>
+        <FooterLink href={`/../bookmarks`}>
+          <BookmarkIcon />
+          <LinkText>Bookmarks</LinkText>
+        </FooterLink>
+      </FooterNav>
+    </>
   );
 }
 
