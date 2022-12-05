@@ -7,14 +7,12 @@ import {
 import styled from "styled-components";
 import Link from "next/link";
 import {
-  BookmarkActive,
-  BookmarkInactive,
-} from "../../../components/BookmarkIcons";
-import {
   BsArrowLeftSquare,
   BsArrowRightSquare,
   BsHouseDoor,
+  BsJournalBookmarkFill,
 } from "react-icons/bs";
+import TalkCard from "../../../components/TalkCard";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
@@ -69,34 +67,13 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
       <ListContainer>
         <TalkList>
           {filteredTalks.map((talk) => (
-            <TalkItem key={talk.id}>
-              <StyledDiv>
-                <StyledTalkLink href={`/${date}/${room}/talks/${talk.id}`}>
-                  <StyledTalkTitle>{`${talk.title.substring(
-                    0,
-                    25
-                  )}...`}</StyledTalkTitle>
-                </StyledTalkLink>
-                <Button
-                  type={"button"}
-                  onClick={() => {
-                    onBookmarkToggle(talk.id);
-                  }}
-                >
-                  {talk.isBookmarked ? (
-                    <BookmarkActive />
-                  ) : (
-                    <BookmarkInactive />
-                  )}
-                </Button>
-              </StyledDiv>
-
-              <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
-              <TalkInfoWrapper>
-                <p>{talk.session}</p>
-                <p>{talk.time}</p>
-              </TalkInfoWrapper>
-            </TalkItem>
+            <TalkCard
+              key={talk.id}
+              talk={talk}
+              onBookmarkToggle={onBookmarkToggle}
+              date={date}
+              room={room}
+            />
           ))}
         </TalkList>
       </ListContainer>
@@ -110,7 +87,10 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
           <HomeIcon />
           <LinkText>Home</LinkText>
         </FooterLink>
-
+        <FooterLink href={"/bookmarks"}>
+          <BookmarkIcon />
+          <LinkText>Bookmarks</LinkText>
+        </FooterLink>
         <FooterLink href={`/${date}/${conferenceNextRoom}`}>
           <NextRoomIcon />
           <LinkText>Room</LinkText>
@@ -132,17 +112,6 @@ const DateLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Button = styled.button`
-  background-color: transparent;
-  margin-top: 0.5em;
-  margin-right: -0.8em;
-  border: none;
-
-  &:hover {
-    background-color: transparent;
-  }
 `;
 
 const Header = styled.div`
@@ -200,40 +169,6 @@ const TalkList = styled.ul`
   display: inline-block;
 `;
 
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StyledTalkLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-`;
-
-const TalkItem = styled.li`
-  background-color: #fff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 10px;
-  padding: 0.5em 1em;
-  margin: 1em;
-`;
-
-const TalkInfoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StyledTalkTitle = styled.h2`
-  font-size: 1.1rem;
-  color: #1f2937;
-  margin-bottom: 0;
-`;
-
-const StyledSpeakerName = styled.h3`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
-
 const FooterNav = styled.nav`
   background-color: #2a384f;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
@@ -279,4 +214,8 @@ const HomeIcon = styled(BsHouseDoor)`
   color: #f5f5f5;
 `;
 
+const BookmarkIcon = styled(BsJournalBookmarkFill)`
+  font-size: 2.5em;
+  color: #f5f5f5;
+`;
 export default Room;

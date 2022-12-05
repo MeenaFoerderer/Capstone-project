@@ -17,6 +17,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
         <StyledCalendarIcon />
         Conference Schedule
       </ScheduleLink>
+      <ScheduleLink href={"../bookmarks"}>Bookmarks</ScheduleLink>
     </LandingPageContainer>
   );
 }
