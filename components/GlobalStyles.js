@@ -1,11 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Roboto-Regular.ttf');
+    }
+
     html,
     body {
         padding: 0;
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: Poppins, sans-serif;
     }
 
     * {
@@ -13,7 +19,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        padding-top: 50px;
+        color: #1d1d1d;
+        background-color: #E5E7EB;
     }
 
     main {

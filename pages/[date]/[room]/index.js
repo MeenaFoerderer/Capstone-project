@@ -4,12 +4,21 @@ import {
   normalizeDate,
   dateFromNormalizedString,
 } from "../../../helpers/normalize";
-import FooterNav from "../../../components/FooterNav";
-import StyledLink from "../../../components/StyledLink";
 import styled from "styled-components";
 import Link from "next/link";
+import TalkCard from "../../../components/TalkCard";
+import {
+  CalendarIcon,
+  FooterLink,
+  FooterNav,
+  LinkText,
+  HomeIcon,
+  BookmarkIcon,
+  PrevRoomIcon,
+  NextRoomIcon,
+} from "../../../components/FooterNav";
 
-function Room({ conferenceDays, conferenceRooms, talks }) {
+function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
   const { date, room } = router.query;
 
@@ -17,13 +26,13 @@ function Room({ conferenceDays, conferenceRooms, talks }) {
 
   const conferenceDaysLinks = conferenceDays.map((day) => {
     return (
-      <StyledLink key={`${day}`} href={`/${normalizeDate(day)}/${room}`}>
+      <DateLink key={`${day}`} href={`/${normalizeDate(day)}/${room}`}>
         {day.toLocaleDateString("de-DE", {
           weekday: "short",
           day: "numeric",
           month: "numeric",
         })}
-      </StyledLink>
+      </DateLink>
     );
   });
 
@@ -55,37 +64,58 @@ function Room({ conferenceDays, conferenceRooms, talks }) {
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
-      <RoomHeadline>{room.toUpperCase().replaceAll("-", " ")}</RoomHeadline>
+      <RoomHeadlineContainer>
+        <RoomHeadline>{room.toUpperCase().replaceAll("-", " ")}</RoomHeadline>
+      </RoomHeadlineContainer>
+
       <ListContainer>
         <TalkList>
           {filteredTalks.map((talk) => (
-            <StyledTalkLink
+            <TalkCard
               key={talk.id}
-              href={`/${date}/${room}/talks/${talk.id}`}
-            >
-              <TalkItem>
-                <StyledTalkTitle>{`${talk.title.substring(
-                  0,
-                  25
-                )}...`}</StyledTalkTitle>
-                <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
-                <TalkInfoWrapper>
-                  <p>{talk.session}</p>
-                  <p>{talk.time}</p>
-                </TalkInfoWrapper>
-              </TalkItem>
-            </StyledTalkLink>
+              talk={talk}
+              onBookmarkToggle={onBookmarkToggle}
+              date={date}
+              room={room}
+            />
           ))}
         </TalkList>
       </ListContainer>
       <FooterNav>
-        <StyledLink href={`/${date}/${conferencePrevRoom}`}>Prev</StyledLink>
-        <StyledLink href={"/"}>Home</StyledLink>
-        <StyledLink href={`/${date}/${conferenceNextRoom}`}>Next</StyledLink>
+        <FooterLink href={`/${date}/${conferencePrevRoom}`}>
+          <PrevRoomIcon aria-label="previous room button" />
+          <LinkText>Room</LinkText>
+        </FooterLink>
+        <FooterLink href={"/"}>
+          <HomeIcon />
+          <LinkText>Home</LinkText>
+        </FooterLink>
+        <FooterLink href={"/bookmarks"}>
+          <BookmarkIcon />
+          <LinkText>Bookmarks</LinkText>
+        </FooterLink>
+        <FooterLink href={`/${date}/${conferenceNextRoom}`}>
+          <NextRoomIcon aria-label="next room button" />
+          <LinkText>Room</LinkText>
+        </FooterLink>
       </FooterNav>
     </>
   );
 }
+
+const DateLink = styled(Link)`
+  background-color: #2a384f;
+  color: #ecfdf5;
+  text-decoration: none;
+  width: 8em;
+  height: 3.5em;
+  padding: 1em 3em;
+  border-radius: 7px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Header = styled.div`
   text-align: center;
@@ -99,25 +129,39 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-const RoomHeadline = styled.h1`
+const RoomHeadlineContainer = styled.div`
   position: fixed;
-  top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 3.5em;
+  height: 4em;
+  background: rgb(229, 231, 235);
+  background: linear-gradient(
+    0deg,
+    rgba(229, 231, 235, 0) 0%,
+    rgba(229, 231, 235, 1) 86%
+  );
+`;
+
+const RoomHeadline = styled.h1`
   width: 50%;
   height: 1.5em;
-  margin-left: 25%;
-  border: 1px solid gray;
   border-radius: 10px;
-  background-color: #fff;
+  background: #fff;
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3em;
 `;
 
 const TalkList = styled.ul`
@@ -126,31 +170,6 @@ const TalkList = styled.ul`
   padding: 0;
   margin: 3.6em 0;
   display: inline-block;
-`;
-
-const StyledTalkLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-`;
-
-const TalkItem = styled.li`
-  border: 2px solid gray;
-  border-radius: 10px;
-  padding: 0.5em 1em;
-  margin: 1em;
-`;
-
-const TalkInfoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StyledTalkTitle = styled.h2`
-  font-size: 1.1rem;
-`;
-
-const StyledSpeakerName = styled.h3`
-  font-size: 1rem;
 `;
 
 export default Room;
