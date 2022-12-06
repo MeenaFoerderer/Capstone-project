@@ -24,6 +24,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
     authors,
     abstract,
     session,
+    room: talkRoom,
     day,
     date: talkDate,
     time,
@@ -71,6 +72,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           <StyledSession>{session}</StyledSession>
           <InfoContainer>
             <li>{dateWithWeekday}</li>
+            <li>{talkRoom}</li>
             <li>{time}</li>
           </InfoContainer>
         </StyledArticle>
