@@ -18,8 +18,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        color: #1d1d1d;
-        background-color: #E5E7EB;
+        _background-color: #f9f9f9;
+        background-color: #e6e4e5;
     }
 
     main {

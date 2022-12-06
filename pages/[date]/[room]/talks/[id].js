@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
 import {
   FooterLink,
-  FooterNav,
   LinkText,
   HomeIcon,
   BookmarkIcon,
-} from "../../../../components/FooterNav";
+} from "../../../../components/FooterElements";
 import styled from "styled-components";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
 import { IoCloseCircleOutline } from "react-icons/io5";
@@ -104,6 +103,8 @@ const IconWrapper = styled.div`
 const CloseIcon = styled(IoCloseCircleOutline)`
   font-size: 2.5em;
   color: #6b6b6b;
+  margin-left: -0.3em;
+  margin-top: -0.15em;
 `;
 
 const StyledArticle = styled.article`
@@ -111,15 +112,18 @@ const StyledArticle = styled.article`
   padding: 1em;
   border-radius: 10px;
   margin-top: 0;
+  margin-bottom: 4em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const StyledTitle = styled.h1`
   font-size: 1.1rem;
+  color: #292929;
 `;
 
 const StyledAuthorList = styled.h2`
   font-size: 0.9rem;
+  color: #292929;
 `;
 
 const StyledFirstAuthor = styled.a`
@@ -129,17 +133,18 @@ const StyledFirstAuthor = styled.a`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #1d1d1d;
+  color: #292929;
 `;
 
 const MailIcon = styled(TfiEmail)`
   margin-left: 0.3em;
-  color: #1d1d1d;
+  color: #292929;
 `;
 
 const StyledAbstract = styled.p`
   text-align: justify;
   font-size: 0.9rem;
+  color: #292929;
 `;
 
 const StyledSession = styled.p`
@@ -156,6 +161,7 @@ const InfoContainer = styled.ul`
   font-size: 0.9rem;
   list-style: none;
   padding: 0;
+  color: #292929;
 `;
 
 const ToggleButton = styled.button`
@@ -172,6 +178,21 @@ const ToggleButton = styled.button`
 const BackButton = styled.button`
   background-color: transparent;
   border: none;
+`;
+
+const FooterNav = styled.nav`
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5em 0.7em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 export default TalkDetails;
