@@ -9,6 +9,7 @@ import {
   CalendarIcon,
 } from "../../components/FooterElements";
 import { IoBookmarks } from "react-icons/io5";
+import Image from "next/image";
 
 function Bookmarks({
   talks,
@@ -39,7 +40,15 @@ function Bookmarks({
               )
           )}
           {!talks.find((talk) => talk.isBookmarked === true) ? (
-            <PlaceholderText>You have no bookmarks yet.</PlaceholderText>
+            <PlaceHolderContainer>
+              <PlaceholderText>You have no bookmarks yet.</PlaceholderText>
+              <Image
+                src="/images/dinosaur.png"
+                alt="small sauropod dinosaur icon"
+                height={50}
+                width={50}
+              />
+            </PlaceHolderContainer>
           ) : (
             ""
           )}
@@ -77,6 +86,13 @@ const StyledTitle = styled.h1`
   margin-left: 1em;
   margin-top: 1.5em;
   font-size: 1.5rem;
+`;
+
+const PlaceHolderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 `;
 
 const TalkList = styled.ul`
