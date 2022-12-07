@@ -2,15 +2,20 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 
-@font-face {
+    @font-face {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
+    @font-face {
+        font-family: 'RubikDirt';
+        src: url("/fonts/RubikDirt-Regular.ttf");
+        }
+    
     html,
     body {
         padding: 0;
         margin: 0;
-        font-family: Poppins, sans-serif;
+        font-family: sans-serif;
     }
 
     * {

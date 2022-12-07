@@ -19,7 +19,13 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
       <StyledContainer>
         <Header>
           <PresenterText>ProEvent presents</PresenterText>
-          <Title>JURASSIC TALK 2022</Title>
+          <TitleName>JURASSIC TALK </TitleName>
+          <YearWrapper>
+            <StyledDiv />
+            <TitleYear>2022</TitleYear>
+            <StyledDiv />
+          </YearWrapper>
+
           <Subtitle>Senckenberg Museum</Subtitle>
         </Header>
 
@@ -44,7 +50,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
 const StyledMain = styled.main`
   text-align: left;
   margin: 0 auto;
-  padding: 3em;
+  padding: 2em;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -67,9 +73,12 @@ const StyledContainer = styled.div`
 const Header = styled.div`
   margin: 0;
   margin-top: 2.5em;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const PresenterText = styled.p`
@@ -77,26 +86,52 @@ const PresenterText = styled.p`
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
+  width: 100%;
 `;
 
-const Title = styled.h1`
+const StyledDiv = styled.div`
+  background: #8e4a49;
+  width: 6em;
+  height: 1em;
+  margin-bottom: 0.4em;
+`;
+
+const TitleName = styled.h1`
   color: #493843;
-  font-size: 1.9rem;
+  font-size: 2.15rem;
   margin: 0;
   text-align: center;
-  letter-spacing: 0.05em;
+  font-family: RubikDirt;
+`;
+
+const YearWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TitleYear = styled.h2`
+  color: #493843;
+  font-size: 2rem;
+  margin: 0;
+  margin-top: -0.2em;
+  text-align: center;
+  font-family: RubikDirt;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
 `;
 
 const Subtitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #493843;
   margin: 0;
+  padding-bottom: 0.2em;
   text-align: justify;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.19em;
+  border-bottom: 2px solid #493843;
 `;
 
 const LinkWrapper = styled.div`
-  margin-top: 20em;
+  margin-top: 22em;
   display: flex;
   gap: 0.8em;
 `;
