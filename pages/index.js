@@ -10,20 +10,20 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
       <Background>
         <Image
           src="/images/landingpage02.jpeg"
-          alt="smth"
+          alt="historical museum hall with large whale skeleton hanging from the ceiling"
           height={667}
           width={375}
         />
       </Background>
 
-      <StyledContainer>
+      <ContentContainer>
         <Header>
           <PresenterText>ProEvent presents</PresenterText>
           <TitleName>JURASSIC TALK </TitleName>
           <YearWrapper>
-            <StyledDiv />
+            <TitleDecoration />
             <TitleYear>2022</TitleYear>
-            <StyledDiv />
+            <TitleDecoration />
           </YearWrapper>
 
           <Subtitle>Senckenberg Museum</Subtitle>
@@ -42,7 +42,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
             <StyledBookmarkIcon /> Bookmarks
           </NavigationLink>
         </LinkWrapper>
-      </StyledContainer>
+      </ContentContainer>
     </StyledMain>
   );
 }
@@ -66,7 +66,7 @@ const Background = styled.div`
   overflow-y: hidden;
 `;
 
-const StyledContainer = styled.div`
+const ContentContainer = styled.div`
   z-index: 10;
 `;
 
@@ -89,7 +89,7 @@ const PresenterText = styled.p`
   width: 100%;
 `;
 
-const StyledDiv = styled.div`
+const TitleDecoration = styled.div`
   background: #8e4a49;
   width: 6em;
   height: 1em;
