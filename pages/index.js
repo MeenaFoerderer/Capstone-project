@@ -74,8 +74,8 @@ const Header = styled.div`
   margin: 0;
   margin-top: 2.5em;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 0.5em;
+  border-radius: 5px;
+  padding: 0.7em 0.5em;
   display: flex;
   flex-direction: column;
   align-items: center;

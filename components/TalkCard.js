@@ -57,7 +57,7 @@ const TalkItem = styled.li`
 `;
 
 const StyledTalkTime = styled.p`
-  color: #7a7a7a;
+  color: #5c5c5c;
 `;
 
 const StyledCard = styled.div`

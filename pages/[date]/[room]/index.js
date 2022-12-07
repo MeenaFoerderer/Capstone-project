@@ -15,7 +15,6 @@ import {
   PrevRoomIcon,
   NextRoomIcon,
 } from "../../../components/FooterElements";
-import { useState } from "react";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
@@ -126,13 +125,11 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 }
 
 const StyledMain = styled.main`
-  _background-color: #f9f9f9;
   background-color: #e6e4e5;
   width: 100%;
 `;
 
 const Header = styled.div`
-  _background-color: #f9f9f9;
   background-color: #e6e4e5;
   text-align: center;
   position: fixed;
@@ -165,12 +162,6 @@ const RoomHeadlineContainer = styled.div`
   width: 100%;
   top: 3.5em;
   height: 4em;
-  _background: rgb(249, 249, 249);
-  _background: linear-gradient(
-    0deg,
-    rgba(249, 249, 249, 0.09147408963585435) 0%,
-    rgba(249, 249, 249, 1) 77%
-  );
   background: rgb(230, 228, 229);
   background: linear-gradient(
     0deg,
