@@ -33,7 +33,7 @@ const FooterLink = styled(Link)`
   height: 100%;
   padding: 0.5em 0em;
 
-  &:active {
+  &:active:focus {
     background-color: #493843;
   }
 `;
@@ -43,8 +43,8 @@ const LinkText = styled.p`
   margin: 0.1em 0 0 0;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 
@@ -52,8 +52,8 @@ const PrevRoomIcon = styled(BsArrowLeftSquare)`
   font-size: 2em;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 
@@ -61,8 +61,8 @@ const NextRoomIcon = styled(BsArrowRightSquare)`
   font-size: 2em;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 
@@ -70,8 +70,8 @@ const HomeIcon = styled(BsHouseDoor)`
   font-size: 2.5em;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 
@@ -79,8 +79,8 @@ const BookmarkIcon = styled(BsJournalBookmarkFill)`
   font-size: 2.5em;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 
@@ -88,8 +88,8 @@ const CalendarIcon = styled(BsCalendar4Week)`
   font-size: 2.5em;
   color: #7a7a7a;
 
-  &:active {
-    color: #fff;
+  &:active:focus {
+    color: #f9f9f9;
   }
 `;
 

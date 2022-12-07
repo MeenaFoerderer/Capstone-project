@@ -114,6 +114,11 @@ const NavigationLink = styled(Link)`
   font-size: 1.1rem;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &:focus:active {
+    background-color: #f9f9f9;
+    color: #493843;
+  }
 `;
 
 const StyledCalendarIcon = styled(BsCalendar4Week)`
