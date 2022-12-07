@@ -20,9 +20,12 @@ function Bookmarks({
 }) {
   return (
     <>
-      <StyledTitle>
-        <IoBookmarks /> Bookmarks
-      </StyledTitle>
+      <Header>
+        <StyledTitle>
+          <IoBookmarks /> Bookmarks
+        </StyledTitle>
+      </Header>
+
       <main>
         <TalkList>
           {talks.map(
@@ -60,6 +63,15 @@ function Bookmarks({
   );
 }
 
+const Header = styled.div`
+  background-color: #e6e4e5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 1em;
+`;
+
 const StyledTitle = styled.h1`
   color: #303030;
   margin-left: 1em;
@@ -71,7 +83,7 @@ const TalkList = styled.ul`
   list-style: none;
   width: 400px;
   padding: 0;
-  margin-top: 1em;
+  margin-top: 5.5em;
   margin-bottom: 4.5em;
   display: inline-block;
 `;

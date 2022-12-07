@@ -85,9 +85,9 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
         </RoomHeadlineContainer>
 
         <ListContainer>
-          {filteredTalks.map((talk) => (
-            <p>{talk.session}</p>
-          ))}
+          {/* {filteredTalks.map((talk) => (
+            <p key={talk.id}>{talk.session}</p>
+          ))} */}
           <TalkList>
             {filteredTalks.map((talk) => (
               <TalkCard
