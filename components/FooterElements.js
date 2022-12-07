@@ -29,38 +29,68 @@ const FooterLink = styled(Link)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  width: 18%;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em 0em;
+
+  &:active {
+    background-color: #493843;
+  }
 `;
 
 const LinkText = styled.p`
   font-size: 0.85rem;
   margin: 0.1em 0 0 0;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 const PrevRoomIcon = styled(BsArrowLeftSquare)`
   font-size: 2em;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 const NextRoomIcon = styled(BsArrowRightSquare)`
   font-size: 2em;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 const HomeIcon = styled(BsHouseDoor)`
   font-size: 2.5em;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 const BookmarkIcon = styled(BsJournalBookmarkFill)`
   font-size: 2.5em;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 const CalendarIcon = styled(BsCalendar4Week)`
   font-size: 2.5em;
   color: #7a7a7a;
+
+  &:active {
+    color: #fff;
+  }
 `;
 
 export {

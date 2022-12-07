@@ -15,6 +15,7 @@ import {
   PrevRoomIcon,
   NextRoomIcon,
 } from "../../../components/FooterElements";
+import { useState } from "react";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
@@ -215,7 +216,6 @@ const FooterNav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0.7em;
   position: fixed;
   bottom: 0;
   left: 0;

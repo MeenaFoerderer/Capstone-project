@@ -188,7 +188,6 @@ const FooterNav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 0.5em 0.7em;
   position: fixed;
   bottom: 0;
   left: 0;
