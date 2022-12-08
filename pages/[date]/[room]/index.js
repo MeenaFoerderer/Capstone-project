@@ -25,16 +25,19 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const conferenceDaysLinks = conferenceDays.map((day) => {
     return (
       <DateLink key={`${day}`} href={`/${normalizeDate(day)}/${room}`}>
-        {day
-          .toLocaleDateString("de-DE", {
-            weekday: "short",
-          })
-          .toUpperCase()}
-
-        {day.toLocaleDateString("de-DE", {
-          day: "numeric",
-          month: "numeric",
-        })}
+        <Weekday>
+          {day
+            .toLocaleDateString("de-DE", {
+              weekday: "short",
+            })
+            .toUpperCase()}
+        </Weekday>
+        <p>
+          {day.toLocaleDateString("de-DE", {
+            day: "numeric",
+            month: "numeric",
+          })}
+        </p>
       </DateLink>
     );
   });
@@ -152,6 +155,10 @@ const DateLink = styled(Link)`
   justify-content: center;
   align-items: center;
   font-weight: 600;
+`;
+
+const Weekday = styled.p`
+  margin-right: 0.2em;
 `;
 
 const RoomHeadlineContainer = styled.div`
