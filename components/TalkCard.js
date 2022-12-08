@@ -12,28 +12,32 @@ function TalkCard({ talk, onBookmarkToggle }) {
       <StyledTalkTime>{talk.time}</StyledTalkTime>
 
       <StyledCard>
-        <CardHeader>
-          <StyledTalkLink href={`/${date}/${room}/talks/${talk.id}`}>
-            <StyledTalkTitle>{`${talk.title.substring(
-              0,
-              22
-            )}...`}</StyledTalkTitle>
-          </StyledTalkLink>
-          <Button
-            aria-label="toggle bookmark button"
-            type={"button"}
-            onClick={() => {
-              onBookmarkToggle(talk.id);
-            }}
-          >
-            {talk.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
-          </Button>
-        </CardHeader>
+        <SessionWrapper style={{ background: talk.session.bgColor }} />
+        <MainCardContainer>
+          <CardHeader>
+            <StyledTalkLink href={`/${date}/${room}/talks/${talk.id}`}>
+              <StyledTalkTitle>{`${talk.title.substring(
+                0,
+                22
+              )}...`}</StyledTalkTitle>
+            </StyledTalkLink>
+            <Button
+              aria-label="toggle bookmark button"
+              type={"button"}
+              onClick={() => {
+                onBookmarkToggle(talk.id);
+              }}
+            >
+              {talk.isBookmarked ? <BookmarkActive /> : <BookmarkInactive />}
+            </Button>
+          </CardHeader>
 
-        <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
-        <TalkInfoWrapper>
-          <p>{talk.session}</p>
-        </TalkInfoWrapper>
+          <StyledSpeakerName>
+            {talk.authors.length > 1
+              ? talk.authors[0] + " et al."
+              : talk.authors[0]}
+          </StyledSpeakerName>
+        </MainCardContainer>
       </StyledCard>
     </TalkItem>
   );
@@ -62,20 +66,38 @@ const StyledTalkTime = styled.p`
 
 const StyledCard = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
-  padding: 0em 1em;
+  padding: 0;
   width: 100%;
   margin-top: 1em;
   margin-left: 0.9em;
+  border-radius: 10px;
+`;
+
+const SessionWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 3%;
+  margin-right: 0.5em;
+  border-radius: 10px 0 0 10px;
+`;
+
+const MainCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.5em 1em 1em 0;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
 `;
 
 const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.7em;
 `;
 
 const StyledTalkLink = styled(Link)`
@@ -83,21 +105,16 @@ const StyledTalkLink = styled(Link)`
   color: #303030;
 `;
 
-const TalkInfoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
-  color: #303030;
-  margin-bottom: 0;
+  color: #474747;
+  margin: 0.4em 0 0 0;
   font-weight: 600;
 `;
 
 const StyledSpeakerName = styled.h3`
   font-size: 1rem;
-  margin: 0.2em 0;
+  margin: 0.2em 0 0 0;
   font-weight: 400;
   color: #474747;
 `;

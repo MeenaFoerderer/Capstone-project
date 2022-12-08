@@ -84,9 +84,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
     })
     .filter((talk) => normalizeRooms(talk.room) === room);
 
-  const allSessions = filteredTalks.map((talk) => talk.session);
-  const uniqueSessions = [...new Set(allSessions)];
-
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
@@ -94,12 +91,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
         <RoomHeadlineContainer>
           <RoomHeadline>{roomName}</RoomHeadline>
         </RoomHeadlineContainer>
-        <SessionList>
-          {uniqueSessions.map((sessions) => {
-            return <p key={sessions}>{sessions}</p>;
-          })}
-        </SessionList>
-
         <ListContainer>
           <TalkList>
             {filteredTalks.map((talk) => (
@@ -140,10 +131,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 const StyledMain = styled.main`
   background-color: #e6e4e5;
   width: 100%;
-`;
-
-const SessionList = styled.div`
-  margin-top: 7em;
 `;
 
 const Header = styled.div`
@@ -211,7 +198,7 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0;
+  margin-top: 6.5em;
 `;
 
 const TalkList = styled.ul`

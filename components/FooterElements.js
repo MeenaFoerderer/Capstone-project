@@ -12,11 +12,10 @@ const FooterNav = styled.nav`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 4em;
+  height: 65px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0.7em;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -67,7 +66,7 @@ const NextRoomIcon = styled(BsArrowRightSquare)`
 `;
 
 const HomeIcon = styled(BsHouseDoor)`
-  font-size: 2.5em;
+  font-size: 2em;
   color: #7a7a7a;
 
   &:active:focus {
@@ -76,7 +75,7 @@ const HomeIcon = styled(BsHouseDoor)`
 `;
 
 const BookmarkIcon = styled(BsJournalBookmarkFill)`
-  font-size: 2.5em;
+  font-size: 2em;
   color: #7a7a7a;
 
   &:active:focus {
@@ -85,7 +84,7 @@ const BookmarkIcon = styled(BsJournalBookmarkFill)`
 `;
 
 const CalendarIcon = styled(BsCalendar4Week)`
-  font-size: 2.5em;
+  font-size: 2em;
   color: #7a7a7a;
 
   &:active:focus {

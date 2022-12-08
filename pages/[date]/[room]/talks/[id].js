@@ -22,7 +22,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
     title,
     authors,
     abstract,
-    session,
+    session: { name, bgColor },
     room: talkRoom,
     day,
     date: talkDate,
@@ -68,7 +68,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
             {coAuthors}
           </StyledAuthorList>
           <StyledAbstract>{abstract}</StyledAbstract>
-          <StyledSession>{session}</StyledSession>
+          <StyledSession style={{ background: bgColor }}>{name}</StyledSession>
           <InfoContainer>
             <li>{dateWithWeekday}</li>
             <li>{talkRoom}</li>
@@ -149,7 +149,6 @@ const StyledAbstract = styled.p`
 
 const StyledSession = styled.p`
   font-size: 0.9rem;
-  background: pink;
   padding: 0.5em 1em;
   border-radius: 5px;
   display: inline;

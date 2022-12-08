@@ -18,15 +18,16 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
 
       <ContentContainer>
         <Header>
-          <PresenterText>ProEvent presents</PresenterText>
-          <TitleName>JURASSIC TALK </TitleName>
-          <YearWrapper>
-            <TitleDecoration />
-            <TitleYear>2022</TitleYear>
-            <TitleDecoration />
-          </YearWrapper>
-
-          <Subtitle>Senckenberg Museum</Subtitle>
+          <Presenter>ProEvent presents</Presenter>
+          <Conference>
+            <TitleName>JURASSIC TALK </TitleName>
+            <YearWrapper>
+              <TitleDecoration />
+              <TitleYear>2022</TitleYear>
+              <TitleDecoration />
+            </YearWrapper>
+            <Subtitle>Senckenberg Museum</Subtitle>
+          </Conference>
         </Header>
 
         <LinkWrapper>
@@ -48,7 +49,6 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
 }
 
 const StyledMain = styled.main`
-  text-align: left;
   margin: 0 auto;
   padding: 2em;
   width: 100vw;
@@ -56,18 +56,23 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Background = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  align-self: center;
   position: fixed;
   overflow-y: hidden;
 `;
 
 const ContentContainer = styled.div`
   z-index: 10;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Header = styled.div`
@@ -76,17 +81,20 @@ const Header = styled.div`
   background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding: 0.7em 0.5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
-const PresenterText = styled.p`
+const Presenter = styled.p`
   color: #8e4a49;
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
-  width: 100%;
+  _width: 100%;
+`;
+
+const Conference = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TitleDecoration = styled.div`
