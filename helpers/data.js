@@ -1681,7 +1681,7 @@ const data = [
     authors: ["Adams", "Miller", "Smart", "Funk"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "08:00",
     day: "Friday",
     date: "25.11.2022",
@@ -1695,7 +1695,7 @@ const data = [
     authors: ["Allison", "Cheb", "Tanaka"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "08:20",
     day: "Friday",
     date: "25.11.2022",
@@ -1709,7 +1709,7 @@ const data = [
     authors: ["Barrett"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "08:40",
     day: "Friday",
     date: "25.11.2022",
@@ -1723,7 +1723,7 @@ const data = [
     authors: ["Bertozzo", "Caravaggio", "DaVinci"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "09:00",
     day: "Friday",
     date: "25.11.2022",
@@ -1737,7 +1737,7 @@ const data = [
     authors: ["Brown", "Schwab"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "09:20",
     day: "Friday",
     date: "25.11.2022",
@@ -1751,7 +1751,7 @@ const data = [
     authors: ["Woodruff", "Dandy", "Everett", "Chan"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "09:40",
     day: "Friday",
     date: "25.11.2022",
@@ -1765,7 +1765,7 @@ const data = [
     authors: ["Brown", "Casey"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "10:20",
     day: "Friday",
     date: "25.11.2022",
@@ -1778,7 +1778,7 @@ const data = [
     authors: ["Buchmann"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "10:40",
     day: "Friday",
     date: "25.11.2022",
@@ -1792,7 +1792,7 @@ const data = [
     authors: ["Wyenberg-Henzler", "Stallnick", "Greer", "Thompson"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "11:00",
     day: "Friday",
     date: "25.11.2022",
@@ -1806,7 +1806,7 @@ const data = [
     authors: ["Wilkinson", "Emery", "Armstrong"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "11:20",
     day: "Friday",
     date: "25.11.2022",
@@ -1820,7 +1820,7 @@ const data = [
     authors: ["Whitlock", "Nye", "Swartout", "Gomes", "Greer"],
     abstract:
       "Ornithopods are a group of herbivorous dinosaurs that were incredibly successful and diverse during the Cretaceous period. Fossil remains from this group have been found on all seven continents, demonstrating that ornithopods had a worldwide extent at their apex. Here we use computed tomographic (CT) scan data to investigate the dentary and partial braincase of a new ornithopod species from the Late Cretaceous of Antarctica. Using digital segmentation techniques, the dentition and neurovasculature were reconstructed from the dentary CT data, while the internal cavities that would have housed the endosseous labyrinth, cranial nerves and floccular lobe were reconstructed from the braincase CT data. The relationships between functional, replacement and non-functional old teeth at each tooth row was examined to investigate the different stages of tooth replacement in this new ornithopod.",
-    session: { name: "13 Early Reptiles", bgColor: "F5EBE0" },
+    session: { name: "13 Early Reptiles", bgColor: "#F5EBE0" },
     time: "11:40",
     day: "Friday",
     date: "25.11.2022",
