@@ -19,12 +19,17 @@ import {
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
   const { date, room } = router.query;
+  const pathname = router.asPath;
 
   if (!room || !date) return;
 
   const conferenceDaysLinks = conferenceDays.map((day) => {
     return (
-      <DateLink key={`${day}`} href={`/${normalizeDate(day)}/${room}`}>
+      <DateLink
+        key={`${day}`}
+        href={`/${normalizeDate(day)}/${room}`}
+        active={pathname === `/${normalizeDate(day)}/${room}` ? 1 : 0}
+      >
         <Weekday>
           {day
             .toLocaleDateString("de-DE", {
@@ -79,6 +84,9 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
     })
     .filter((talk) => normalizeRooms(talk.room) === room);
 
+  const allSessions = filteredTalks.map((talk) => talk.session);
+  const uniqueSessions = [...new Set(allSessions)];
+
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
@@ -86,11 +94,13 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
         <RoomHeadlineContainer>
           <RoomHeadline>{roomName}</RoomHeadline>
         </RoomHeadlineContainer>
+        <SessionList>
+          {uniqueSessions.map((sessions) => {
+            return <p key={sessions}>{sessions}</p>;
+          })}
+        </SessionList>
 
         <ListContainer>
-          {/* {filteredTalks.map((talk) => (
-            <p key={talk.id}>{talk.session}</p>
-          ))} */}
           <TalkList>
             {filteredTalks.map((talk) => (
               <TalkCard
@@ -132,6 +142,10 @@ const StyledMain = styled.main`
   width: 100%;
 `;
 
+const SessionList = styled.div`
+  margin-top: 7em;
+`;
+
 const Header = styled.div`
   background-color: #e6e4e5;
   text-align: center;
@@ -144,7 +158,6 @@ const Header = styled.div`
 `;
 
 const DateLink = styled(Link)`
-  background-color: #f9f9f9;
   color: #616161;
   text-decoration: none;
   width: 8em;
@@ -154,7 +167,10 @@ const DateLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: 400;
+
+  background: ${(props) => (props.active ? "#787272" : "#f9f9f9")};
+  color: ${(props) => (props.active ? "#fafafa" : "#616161")};
 `;
 
 const Weekday = styled.p`
@@ -195,14 +211,15 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3em;
+  margin-top: 0;
 `;
 
 const TalkList = styled.ul`
   list-style: none;
   width: 400px;
   padding: 0;
-  margin: 3.6em 0;
+  margin: 0;
+  margin-bottom: 4.5em;
   display: inline-block;
 `;
 
