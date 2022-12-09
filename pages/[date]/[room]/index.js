@@ -8,35 +8,58 @@ import styled from "styled-components";
 import Link from "next/link";
 import TalkCard from "../../../components/TalkCard";
 import {
-  CalendarIcon,
   FooterLink,
-  FooterNav,
   LinkText,
   HomeIcon,
   BookmarkIcon,
   PrevRoomIcon,
   NextRoomIcon,
-} from "../../../components/FooterNav";
+} from "../../../components/FooterElements";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
   const { date, room } = router.query;
+  const pathname = router.asPath;
 
   if (!room || !date) return;
 
   const conferenceDaysLinks = conferenceDays.map((day) => {
     return (
-      <DateLink key={`${day}`} href={`/${normalizeDate(day)}/${room}`}>
-        {day.toLocaleDateString("de-DE", {
-          weekday: "short",
-          day: "numeric",
-          month: "numeric",
-        })}
+      <DateLink
+        key={`${day}`}
+        href={`/${normalizeDate(day)}/${room}`}
+        active={pathname === `/${normalizeDate(day)}/${room}` ? 1 : 0}
+      >
+        <Weekday>
+          {day
+            .toLocaleDateString("de-DE", {
+              weekday: "short",
+            })
+            .toUpperCase()}
+        </Weekday>
+        <p>
+          {day.toLocaleDateString("de-DE", {
+            day: "numeric",
+            month: "numeric",
+          })}
+        </p>
       </DateLink>
     );
   });
 
   const indexOfCurrentRoom = conferenceRooms.map(normalizeRooms).indexOf(room);
+
+  function toTitleCase(str) {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  }
+
+  const roomName = toTitleCase(room.replaceAll("-", " "));
 
   const conferenceNextRoom = normalizeRooms(
     conferenceRooms[
@@ -64,23 +87,25 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
-      <RoomHeadlineContainer>
-        <RoomHeadline>{room.toUpperCase().replaceAll("-", " ")}</RoomHeadline>
-      </RoomHeadlineContainer>
+      <StyledMain>
+        <RoomHeadlineContainer>
+          <RoomHeadline>{roomName}</RoomHeadline>
+        </RoomHeadlineContainer>
+        <ListContainer>
+          <TalkList>
+            {filteredTalks.map((talk) => (
+              <TalkCard
+                key={talk.id}
+                talk={talk}
+                onBookmarkToggle={onBookmarkToggle}
+                date={date}
+                room={room}
+              />
+            ))}
+          </TalkList>
+        </ListContainer>
+      </StyledMain>
 
-      <ListContainer>
-        <TalkList>
-          {filteredTalks.map((talk) => (
-            <TalkCard
-              key={talk.id}
-              talk={talk}
-              onBookmarkToggle={onBookmarkToggle}
-              date={date}
-              room={room}
-            />
-          ))}
-        </TalkList>
-      </ListContainer>
       <FooterNav>
         <FooterLink href={`/${date}/${conferencePrevRoom}`}>
           <PrevRoomIcon aria-label="previous room button" />
@@ -103,30 +128,40 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   );
 }
 
-const DateLink = styled(Link)`
-  background-color: #2a384f;
-  color: #ecfdf5;
-  text-decoration: none;
-  width: 8em;
-  height: 3.5em;
-  padding: 1em 3em;
-  border-radius: 7px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const StyledMain = styled.main`
+  background-color: #e6e4e5;
+  width: 100%;
 `;
 
 const Header = styled.div`
+  background-color: #e6e4e5;
   text-align: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #fff;
-  border-bottom: 1px solid gray;
   display: flex;
   justify-content: space-between;
+`;
+
+const DateLink = styled(Link)`
+  color: #616161;
+  text-decoration: none;
+  width: 8em;
+  height: 3.5em;
+  padding: 1em 3em;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: OpenSans-SemiBold, sans-serif;
+
+  background: ${(props) => (props.active ? "#787272" : "#f9f9f9")};
+  color: ${(props) => (props.active ? "#fafafa" : "#616161")};
+`;
+
+const Weekday = styled.p`
+  margin-right: 0.2em;
 `;
 
 const RoomHeadlineContainer = styled.div`
@@ -137,20 +172,22 @@ const RoomHeadlineContainer = styled.div`
   width: 100%;
   top: 3.5em;
   height: 4em;
-  background: rgb(229, 231, 235);
+  background: rgb(230, 228, 229);
   background: linear-gradient(
     0deg,
-    rgba(229, 231, 235, 0) 0%,
-    rgba(229, 231, 235, 1) 86%
+    rgba(230, 228, 229, 0.05646008403361347) 0%,
+    rgba(230, 228, 229, 1) 77%
   );
 `;
 
 const RoomHeadline = styled.h1`
   width: 50%;
-  height: 1.5em;
+  padding: 0.3em 0;
   border-radius: 10px;
-  background: #fff;
-  font-size: 1.2rem;
+  background: #493843;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,15 +198,30 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3em;
+  margin-top: 6.5em;
 `;
 
 const TalkList = styled.ul`
   list-style: none;
   width: 400px;
   padding: 0;
-  margin: 3.6em 0;
+  margin: 0;
+  margin-bottom: 4.5em;
   display: inline-block;
+`;
+
+const FooterNav = styled.nav`
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 export default Room;

@@ -9,14 +9,13 @@ import {
 } from "react-icons/bs";
 
 const FooterNav = styled.nav`
-  background-color: #2a384f;
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 4em;
+  height: 65px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0.7em;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -29,38 +28,68 @@ const FooterLink = styled(Link)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  width: 18%;
+  width: 100%;
+  height: 100%;
+  padding: 5px 0;
+
+  &:active:focus {
+    background-color: #493843;
+  }
 `;
 
 const LinkText = styled.p`
   font-size: 0.85rem;
-  margin: 0.1em 0 0 0;
-  color: #f5f5f5;
+  margin: 1px 0 0 0;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 const PrevRoomIcon = styled(BsArrowLeftSquare)`
-  font-size: 2em;
-  color: #f5f5f5;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 const NextRoomIcon = styled(BsArrowRightSquare)`
-  font-size: 2em;
-  color: #f5f5f5;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 const HomeIcon = styled(BsHouseDoor)`
-  font-size: 2.5em;
-  color: #f5f5f5;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 const BookmarkIcon = styled(BsJournalBookmarkFill)`
-  font-size: 2.5em;
-  color: #f5f5f5;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 const CalendarIcon = styled(BsCalendar4Week)`
-  font-size: 2.5em;
-  color: #f5f5f5;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+
+  &:active:focus {
+    color: #f9f9f9;
+  }
 `;
 
 export {
