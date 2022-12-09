@@ -86,9 +86,9 @@ const Header = styled.div`
 const Presenter = styled.p`
   color: #8e4a49;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  _width: 100%;
+  font-family: "OpenSans-Bold", sans-serif;
 `;
 
 const Conference = styled.div`
@@ -109,7 +109,7 @@ const TitleName = styled.h1`
   font-size: 2.15rem;
   margin: 0;
   text-align: center;
-  font-family: RubikDirt;
+  font-family: RubikDirt, sans-serif;
 `;
 
 const YearWrapper = styled.div`
@@ -123,7 +123,7 @@ const TitleYear = styled.h2`
   margin: 0;
   margin-top: -0.2em;
   text-align: center;
-  font-family: RubikDirt;
+  font-family: RubikDirt, sans-serif;
   margin-left: 0.1em;
   margin-right: 0.1em;
 `;
@@ -136,6 +136,7 @@ const Subtitle = styled.h2`
   text-align: justify;
   letter-spacing: 0.19em;
   border-bottom: 2px solid #493843;
+  font-family: "OpenSans-SemiBold", sans-serif;
 `;
 
 const LinkWrapper = styled.div`
@@ -155,6 +156,7 @@ const NavigationLink = styled(Link)`
   text-decoration: none;
   color: #493843;
   font-size: 1.1rem;
+  font-family: "OpenSans-SemiBold", sans-serif;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 

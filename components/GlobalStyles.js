@@ -10,12 +10,27 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'RubikDirt';
         src: url("/fonts/RubikDirt-Regular.ttf");
         }
+
+    @font-face {
+        font-family: 'OpenSans';
+        src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
+        }
+
+    @font-face {
+        font-family: 'OpenSans-SemiBold';
+        src: url("/fonts/OpenSans-SemiBold.ttf")
+    }
     
+    @font-face {
+        font-family: 'OpenSans-Bold';
+        src: url("/fonts/OpenSans-Bold.ttf")
+    }
+
     html,
     body {
         padding: 0;
         margin: 0;
-        font-family: sans-serif;
+        font-family: OpenSans, sans-serif;
     }
 
     * {
@@ -23,8 +38,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        _background-color: #f9f9f9;
         background-color: #e6e4e5;
+        font-family: OpenSans;
     }
 
     main {

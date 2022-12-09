@@ -104,8 +104,8 @@ const StyledTalkLink = styled(Link)`
 const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
   color: #474747;
-  margin: 0.8em 0 0 0;
-  font-weight: 600;
+  margin: 0.7em 0 0 0;
+  font-family: "OpenSans-SemiBold", sans-serif;
 `;
 
 const StyledSpeakerName = styled.h3`

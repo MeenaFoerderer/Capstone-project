@@ -154,7 +154,7 @@ const DateLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 400;
+  font-family: OpenSans-SemiBold, sans-serif;
 
   background: ${(props) => (props.active ? "#787272" : "#f9f9f9")};
   color: ${(props) => (props.active ? "#fafafa" : "#616161")};
