@@ -32,11 +32,7 @@ function TalkCard({ talk, onBookmarkToggle }) {
             </Button>
           </CardHeader>
 
-          <StyledSpeakerName>
-            {talk.authors.length > 1
-              ? talk.authors[0] + " et al."
-              : talk.authors[0]}
-          </StyledSpeakerName>
+          <StyledSpeakerName>{talk.authors[0]}</StyledSpeakerName>
         </MainCardContainer>
       </StyledCard>
     </TalkItem>
@@ -71,14 +67,14 @@ const StyledCard = styled.div`
   padding: 0;
   width: 100%;
   margin-top: 1em;
-  margin-left: 0.9em;
+  margin-left: 1em;
   border-radius: 10px;
 `;
 
 const SessionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 3%;
+  width: 5%;
   margin-right: 0.5em;
   border-radius: 10px 0 0 10px;
 `;
@@ -88,7 +84,7 @@ const MainCardContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
-  padding: 0.5em 1em 1em 0;
+  padding: 0em 1em 1em 0;
   width: 100%;
   border-radius: 0 10px 10px 0;
 `;
@@ -97,7 +93,7 @@ const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 0.7em;
+  margin-bottom: 1.3em;
 `;
 
 const StyledTalkLink = styled(Link)`
@@ -108,7 +104,7 @@ const StyledTalkLink = styled(Link)`
 const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
   color: #474747;
-  margin: 0.4em 0 0 0;
+  margin: 0.8em 0 0 0;
   font-weight: 600;
 `;
 
