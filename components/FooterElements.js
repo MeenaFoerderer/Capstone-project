@@ -30,7 +30,7 @@ const FooterLink = styled(Link)`
   text-decoration: none;
   width: 100%;
   height: 100%;
-  padding: 0.5em 0em;
+  padding: 5px 0;
 
   &:active:focus {
     background-color: #493843;
@@ -39,7 +39,7 @@ const FooterLink = styled(Link)`
 
 const LinkText = styled.p`
   font-size: 0.85rem;
-  margin: 0.1em 0 0 0;
+  margin: 1px 0 0 0;
   color: #7a7a7a;
 
   &:active:focus {
@@ -48,7 +48,7 @@ const LinkText = styled.p`
 `;
 
 const PrevRoomIcon = styled(BsArrowLeftSquare)`
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #7a7a7a;
 
   &:active:focus {
@@ -57,7 +57,7 @@ const PrevRoomIcon = styled(BsArrowLeftSquare)`
 `;
 
 const NextRoomIcon = styled(BsArrowRightSquare)`
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #7a7a7a;
 
   &:active:focus {
@@ -66,7 +66,7 @@ const NextRoomIcon = styled(BsArrowRightSquare)`
 `;
 
 const HomeIcon = styled(BsHouseDoor)`
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #7a7a7a;
 
   &:active:focus {
@@ -75,7 +75,7 @@ const HomeIcon = styled(BsHouseDoor)`
 `;
 
 const BookmarkIcon = styled(BsJournalBookmarkFill)`
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #7a7a7a;
 
   &:active:focus {
@@ -84,7 +84,7 @@ const BookmarkIcon = styled(BsJournalBookmarkFill)`
 `;
 
 const CalendarIcon = styled(BsCalendar4Week)`
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #7a7a7a;
 
   &:active:focus {

@@ -101,7 +101,7 @@ const IconWrapper = styled.div`
 `;
 
 const CloseIcon = styled(IoCloseCircleOutline)`
-  font-size: 2.5em;
+  font-size: 2.2rem;
   color: #6b6b6b;
   margin-left: -0.3em;
   margin-top: -0.15em;
