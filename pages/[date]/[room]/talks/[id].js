@@ -169,6 +169,7 @@ const ToggleButton = styled.button`
   margin-top: -5px;
   margin-right: -10px;
   border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: transparent;
@@ -178,6 +179,7 @@ const ToggleButton = styled.button`
 const BackButton = styled.button`
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 const FooterNav = styled.nav`

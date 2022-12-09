@@ -44,10 +44,7 @@ const Button = styled.button`
   margin-top: 0.5em;
   margin-right: -0.8em;
   border: none;
-
-  &:hover {
-    background-color: transparent;
-  }
+  cursor: pointer;
 `;
 
 const TalkItem = styled.li`
