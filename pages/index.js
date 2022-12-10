@@ -88,7 +88,7 @@ const Presenter = styled.p`
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
-  font-family: "OpenSans-Bold", sans-serif;
+  font-family: OpenSans-Bold, sans-serif;
 `;
 
 const Conference = styled.div`
@@ -134,9 +134,9 @@ const Subtitle = styled.h2`
   margin: 0;
   padding-bottom: 0.2em;
   text-align: justify;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.17em;
   border-bottom: 2px solid #493843;
-  font-family: "OpenSans-SemiBold", sans-serif;
+  font-family: OpenSans-Bold, sans-serif;
 `;
 
 const LinkWrapper = styled.div`
@@ -156,7 +156,7 @@ const NavigationLink = styled(Link)`
   text-decoration: none;
   color: #493843;
   font-size: 1.1rem;
-  font-family: "OpenSans-SemiBold", sans-serif;
+  font-family: OpenSans-Bold, sans-serif;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 

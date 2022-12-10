@@ -119,7 +119,7 @@ const StyledArticle = styled.article`
 const StyledTitle = styled.h1`
   font-size: 1.1rem;
   color: #292929;
-  font-family: "OpenSans-SemiBold", sans-serif;
+  font-family: OpenSans-Bold, sans-serif;
 `;
 
 const StyledAuthorList = styled.h2`

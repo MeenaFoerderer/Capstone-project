@@ -86,6 +86,7 @@ const StyledTitle = styled.h1`
   margin-left: 1em;
   margin-top: 1.5em;
   font-size: 1.5rem;
+  font-family: OpenSans-Bold, sans-serif;
 `;
 
 const PlaceHolderContainer = styled.div`
