@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import {
+  FooterNav,
   FooterLink,
   LinkText,
   HomeIcon,
   BookmarkIcon,
 } from "../../../../components/FooterElements";
 import styled from "styled-components";
+import { css } from "styled-components";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import {
@@ -13,8 +15,10 @@ import {
   BookmarkInactive,
 } from "../../../../components/BookmarkIcons";
 import { TfiEmail } from "react-icons/tfi";
+import { useState } from "react";
 
 function TalkDetails({ talks, onBookmarkToggle }) {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -32,7 +36,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
   } = talks.find((talk) => talk.id === id);
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
-    "de-DE",
+    "en-EN",
     { weekday: "long", day: "numeric", month: "numeric", year: "numeric" }
   );
 
@@ -60,13 +64,36 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           <StyledTitle>{title}</StyledTitle>
           <StyledAuthorList>
             <StyledFirstAuthor
-              href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+              onClick={() => {
+                setIsOpen((isOpen) => !isOpen);
+              }}
             >
               {firstAuthor}
               <MailIcon />
             </StyledFirstAuthor>
             {coAuthors}
           </StyledAuthorList>
+          {isOpen && (
+            <Modal>
+              <ModalHeader>Do you want to send an email?</ModalHeader>
+              <ButtonWrapper>
+                <Button
+                  type="button"
+                  variant="cancel"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="button" variant="continue">
+                  <MailLink
+                    href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+                  >
+                    Continue
+                  </MailLink>
+                </Button>
+              </ButtonWrapper>
+            </Modal>
+          )}
           <StyledAbstract>{abstract}</StyledAbstract>
           <StyledSession style={{ background: bgColor }}>{name}</StyledSession>
           <InfoContainer>
@@ -119,7 +146,7 @@ const StyledArticle = styled.article`
 const StyledTitle = styled.h1`
   font-size: 1.1rem;
   color: #292929;
-  font-family: "OpenSans-SemiBold", sans-serif;
+  font-family: OpenSans-Bold, sans-serif;
 `;
 
 const StyledAuthorList = styled.h2`
@@ -153,6 +180,7 @@ const StyledSession = styled.p`
   padding: 0.5em 1em;
   border-radius: 5px;
   display: inline;
+  color: #292929;
 `;
 
 const InfoContainer = styled.ul`
@@ -182,18 +210,64 @@ const BackButton = styled.button`
   cursor: pointer;
 `;
 
-const FooterNav = styled.nav`
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 65px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+const Modal = styled.div`
+  background: #e6e4e5;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 35%;
+  width: 311px;
+  max-width: 85vw;
+  height: 180px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+`;
+
+const ModalHeader = styled.h3`
+  margin: 0;
+  color: #292929;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+  width: 85%;
+  gap: 1em;
+`;
+
+const Button = styled.button`
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  padding: 0.8em 0;
+  font-size: 1rem;
+  font-family: OpenSans-SemiBold, sans-serif;
+  cursor: pointer;
+
+  ${({ variant }) =>
+    variant === "continue" &&
+    css`
+      background: #493843;
+      color: #fff;
+    `}
+
+  ${({ variant }) =>
+    variant === "cancel" &&
+    css`
+      background: #fff;
+      color: #493843;
+    `}
+`;
+
+const MailLink = styled.a`
+  text-decoration: none;
+  color: #fff;
 `;
 
 export default TalkDetails;

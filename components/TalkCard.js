@@ -18,7 +18,7 @@ function TalkCard({ talk, onBookmarkToggle }) {
             <StyledTalkLink href={`/${date}/${room}/talks/${talk.id}`}>
               <StyledTalkTitle>{`${talk.title.substring(
                 0,
-                22
+                20
               )}...`}</StyledTalkTitle>
             </StyledTalkLink>
             <Button
@@ -102,7 +102,7 @@ const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
   color: #474747;
   margin: 0.7em 0 0 0;
-  font-family: "OpenSans-SemiBold", sans-serif;
+  font-family: OpenSans-SemiBold, sans-serif;
 `;
 
 const StyledSpeakerName = styled.h3`

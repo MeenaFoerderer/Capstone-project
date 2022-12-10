@@ -41,13 +41,6 @@ const GlobalStyles = createGlobalStyle`
         background-color: #e6e4e5;
         font-family: OpenSans;
     }
-
-    main {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 `;
 
 export default GlobalStyles;
