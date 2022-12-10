@@ -15,7 +15,6 @@ const FooterNav = styled.nav`
   height: 65px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;

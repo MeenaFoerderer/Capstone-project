@@ -2,6 +2,7 @@ import styled from "styled-components";
 import TalkCard from "../../components/TalkCard";
 import { normalizeDate, normalizeRooms } from "../../helpers/normalize";
 import {
+  FooterNav,
   FooterLink,
   LinkText,
   HomeIcon,
@@ -103,20 +104,6 @@ const TalkList = styled.ul`
   margin-top: 5.5em;
   margin-bottom: 4.5em;
   display: inline-block;
-`;
-
-const FooterNav = styled.nav`
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 65px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 `;
 
 const PlaceholderText = styled.p`

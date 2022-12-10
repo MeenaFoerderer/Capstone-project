@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import {
+  FooterNav,
   FooterLink,
   LinkText,
   HomeIcon,
@@ -32,7 +33,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
   } = talks.find((talk) => talk.id === id);
 
   const dateWithWeekday = dateFromNormalizedString(talkDate).toLocaleDateString(
-    "de-DE",
+    "en-EN",
     { weekday: "long", day: "numeric", month: "numeric", year: "numeric" }
   );
 
@@ -180,20 +181,6 @@ const BackButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`;
-
-const FooterNav = styled.nav`
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 65px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 `;
 
 export default TalkDetails;
