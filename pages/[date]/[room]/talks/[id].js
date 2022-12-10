@@ -7,6 +7,7 @@ import {
   BookmarkIcon,
 } from "../../../../components/FooterElements";
 import styled from "styled-components";
+import { css } from "styled-components";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import {
@@ -14,8 +15,10 @@ import {
   BookmarkInactive,
 } from "../../../../components/BookmarkIcons";
 import { TfiEmail } from "react-icons/tfi";
+import { useState } from "react";
 
 function TalkDetails({ talks, onBookmarkToggle }) {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -61,13 +64,36 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           <StyledTitle>{title}</StyledTitle>
           <StyledAuthorList>
             <StyledFirstAuthor
-              href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+              onClick={() => {
+                setIsOpen((isOpen) => !isOpen);
+              }}
             >
               {firstAuthor}
               <MailIcon />
             </StyledFirstAuthor>
             {coAuthors}
           </StyledAuthorList>
+          {isOpen && (
+            <Modal>
+              <ModalHeader>Do you want to send an email?</ModalHeader>
+              <ButtonWrapper>
+                <Button
+                  type="button"
+                  variant="cancel"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="button" variant="continue">
+                  <MailLink
+                    href={`mailto:${firstAuthor.toLowerCase()}@mail.com`}
+                  >
+                    Continue
+                  </MailLink>
+                </Button>
+              </ButtonWrapper>
+            </Modal>
+          )}
           <StyledAbstract>{abstract}</StyledAbstract>
           <StyledSession style={{ background: bgColor }}>{name}</StyledSession>
           <InfoContainer>
@@ -181,6 +207,66 @@ const BackButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+`;
+
+const Modal = styled.div`
+  background: #e6e4e5;
+  position: fixed;
+  top: 35%;
+  width: 311px;
+  max-width: 85vw;
+  height: 180px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+`;
+
+const ModalHeader = styled.h3`
+  margin: 0;
+  color: #292929;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+  width: 85%;
+  gap: 1em;
+`;
+
+const Button = styled.button`
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  padding: 0.8em 0;
+  font-size: 1rem;
+  font-family: OpenSans-SemiBold, sans-serif;
+  cursor: pointer;
+
+  ${({ variant }) =>
+    variant === "continue" &&
+    css`
+      background: #493843;
+      color: #fff;
+    `}
+
+  ${({ variant }) =>
+    variant === "cancel" &&
+    css`
+      background: #fff;
+      color: #493843;
+    `}
+`;
+
+const MailLink = styled.a`
+  text-decoration: none;
+  color: #fff;
 `;
 
 export default TalkDetails;
