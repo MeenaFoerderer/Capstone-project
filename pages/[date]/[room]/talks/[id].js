@@ -180,6 +180,7 @@ const StyledSession = styled.p`
   padding: 0.5em 1em;
   border-radius: 5px;
   display: inline;
+  color: #292929;
 `;
 
 const InfoContainer = styled.ul`
