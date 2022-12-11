@@ -7,18 +7,25 @@ import {
   BsJournalBookmarkFill,
   BsCalendar4Week,
 } from "react-icons/bs";
+import css from "styled-jsx/css";
 
 const FooterNav = styled.nav`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 65px;
+  height: 9vh;
   width: 100%;
   display: flex;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+
+  ${({ variant }) =>
+    variant === "idPageFooter" &&
+    css`
+      height: 8.6vh;
+    `}
 `;
 
 const FooterLink = styled(Link)`
@@ -29,7 +36,7 @@ const FooterLink = styled(Link)`
   text-decoration: none;
   width: 100%;
   height: 100%;
-  padding: 5px 0;
+  padding: 0.3em 0;
 
   &:active:focus {
     background-color: #493843;

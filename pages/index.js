@@ -50,7 +50,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
 
 const StyledMain = styled.main`
   margin: 0 auto;
-  padding: 2em;
+  padding: 2em 0;
   width: 100vw;
   height: 100vh;
   display: flex;

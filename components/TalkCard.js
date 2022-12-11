@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { BookmarkActive, BookmarkInactive } from "./BookmarkIcons";
+import { BookmarkActive, BookmarkInactive } from "./StyledBookmarks";
 import { normalizeRooms } from "../helpers/normalize";
 
 function TalkCard({ talk, onBookmarkToggle }) {

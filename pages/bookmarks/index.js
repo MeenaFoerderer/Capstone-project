@@ -1,22 +1,21 @@
 import styled from "styled-components";
 import TalkCard from "../../components/TalkCard";
+import StyledList from "../../components/StyledList";
+import StyledMain from "../../components/StyledMain";
 import { normalizeDate, normalizeRooms } from "../../helpers/normalize";
 import {
   FooterNav,
   FooterLink,
   LinkText,
   HomeIcon,
-  BookmarkIcon,
   CalendarIcon,
-} from "../../components/FooterElements";
+} from "../../components/StyledFooter";
 import { IoBookmarks } from "react-icons/io5";
 import Image from "next/image";
 
 function Bookmarks({
   talks,
   onBookmarkToggle,
-  date,
-  room,
   conferenceDays,
   conferenceRooms,
 }) {
@@ -28,8 +27,8 @@ function Bookmarks({
         </StyledTitle>
       </Header>
 
-      <main>
-        <TalkList>
+      <StyledMain>
+        <StyledList>
           {talks.map(
             (talk) =>
               talk.isBookmarked && (
@@ -53,8 +52,8 @@ function Bookmarks({
           ) : (
             ""
           )}
-        </TalkList>
-      </main>
+        </StyledList>
+      </StyledMain>
       <FooterNav>
         <FooterLink href={"/"}>
           <HomeIcon />
@@ -95,15 +94,6 @@ const PlaceHolderContainer = styled.div`
   flex-direction: column;
   justify-items: center;
   align-items: center;
-`;
-
-const TalkList = styled.ul`
-  list-style: none;
-  width: 400px;
-  padding: 0;
-  margin-top: 5.5em;
-  margin-bottom: 4.5em;
-  display: inline-block;
 `;
 
 const PlaceholderText = styled.p`

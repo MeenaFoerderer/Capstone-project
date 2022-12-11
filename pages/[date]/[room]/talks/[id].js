@@ -5,7 +5,7 @@ import {
   LinkText,
   HomeIcon,
   BookmarkIcon,
-} from "../../../../components/FooterElements";
+} from "../../../../components/StyledFooter";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { dateFromNormalizedString } from "../../../../helpers/normalize";
@@ -13,7 +13,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import {
   BookmarkActive,
   BookmarkInactive,
-} from "../../../../components/BookmarkIcons";
+} from "../../../../components/StyledBookmarks";
 import { TfiEmail } from "react-icons/tfi";
 import { useState } from "react";
 
@@ -103,7 +103,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           </InfoContainer>
         </StyledArticle>
       </StyledMain>
-      <FooterNav>
+      <FooterNav variant="idPageFooter">
         <FooterLink href={"/"}>
           <HomeIcon />
           <LinkText>Home</LinkText>
@@ -138,7 +138,7 @@ const StyledArticle = styled.article`
   background-color: #fff;
   padding: 1em;
   border-radius: 10px;
-  margin-top: 0;
+  margin: 0 auto;
   margin-bottom: 4em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
@@ -198,10 +198,6 @@ const ToggleButton = styled.button`
   margin-right: -10px;
   border: none;
   cursor: pointer;
-
-  &:hover {
-    background-color: transparent;
-  }
 `;
 
 const BackButton = styled.button`
