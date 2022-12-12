@@ -10,7 +10,7 @@ You can find the hosted version on [Vercel](https://capstone-project-proevent.ve
 
 **Important: The project is optimized for mobile screen (iPhone SE).**
 
-## included Tech Stack
+## Included Tech Stack
 
 - React
 - React Router
