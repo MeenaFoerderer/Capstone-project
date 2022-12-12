@@ -1,6 +1,6 @@
 # My Capstone Project: ProEvent Conference Planner
 
-ProEvent Conference Planner is an app designed to make it easier for conference attendees to get an overview of the program, conveniently plan and coordinate their visit, and make contacts.
+**ProEvent Conference Planner** is an app designed to make it easier for conference attendees to get an overview of the program, conveniently plan and coordinate their visit, and make contacts.
 
 ![Screenshots](/public/images/app-screenshots.png)
 
@@ -8,7 +8,7 @@ ProEvent Conference Planner is an app designed to make it easier for conference 
 
 You can find the hosted version on [Vercel](https://capstone-project-proevent.vercel.app/)
 
-**Important the project is optimized for mobile screen (iPhone SE).**
+**Important: The project is optimized for mobile screen (iPhone SE).**
 
 ## included Tech Stack
 
@@ -26,4 +26,5 @@ You can find the hosted version on [Vercel](https://capstone-project-proevent.ve
 - Install all dependencies with `$ npm install`
 - Run app in dev mode with `$ npm run dev`
 - Server: [http://localhost:3000/](http://localhost:3000/)
+- Open the developer tools and choose mobile view (iPhone SE)
 - Run tests via `$ npm run test`
