@@ -7,6 +7,8 @@ import {
 import styled from "styled-components";
 import Link from "next/link";
 import TalkCard from "../../../components/TalkCard";
+import StyledList from "../../../components/StyledList";
+import StyledMain from "../../../components/StyledMain";
 import {
   FooterNav,
   FooterLink,
@@ -15,7 +17,7 @@ import {
   BookmarkIcon,
   PrevRoomIcon,
   NextRoomIcon,
-} from "../../../components/FooterElements";
+} from "../../../components/StyledFooter";
 
 function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   const router = useRouter();
@@ -88,12 +90,12 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   return (
     <>
       <Header>{conferenceDaysLinks}</Header>
-      <StyledMain>
+      <>
         <RoomHeadlineContainer>
           <RoomHeadline>{roomName}</RoomHeadline>
         </RoomHeadlineContainer>
-        <ListContainer>
-          <TalkList>
+        <StyledMain>
+          <StyledList>
             {filteredTalks.map((talk) => (
               <TalkCard
                 key={talk.id}
@@ -103,9 +105,9 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
                 room={room}
               />
             ))}
-          </TalkList>
-        </ListContainer>
-      </StyledMain>
+          </StyledList>
+        </StyledMain>
+      </>
 
       <FooterNav>
         <FooterLink href={`/${date}/${conferencePrevRoom}`}>
@@ -128,11 +130,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
     </>
   );
 }
-
-const StyledMain = styled.main`
-  background-color: #e6e4e5;
-  width: 100%;
-`;
 
 const Header = styled.div`
   background-color: #e6e4e5;
@@ -193,22 +190,6 @@ const RoomHeadline = styled.h1`
   justify-content: center;
   align-items: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 6.5em;
-`;
-
-const TalkList = styled.ul`
-  list-style: none;
-  width: 400px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 4.5em;
-  display: inline-block;
 `;
 
 export default Room;
