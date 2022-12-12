@@ -131,11 +131,6 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   );
 }
 
-// const StyledMain = styled.main`
-//   background-color: #e6e4e5;
-//   width: 100%;
-// `;
-
 const Header = styled.div`
   background-color: #e6e4e5;
   text-align: center;
