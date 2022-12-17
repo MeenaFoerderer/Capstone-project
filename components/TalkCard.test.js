@@ -21,23 +21,15 @@ it("renderTalkCard", () => {
 
   render(<TalkCard talk={talk} onBookmarkToggle={onBookmarkToggle} />);
 
-  //   screen.debug();
-
   const expectedAuthorName = talk.authors[0];
-  const expectedSessionName = talk.session.name;
   const expectedTitle = talk.title.substring(0, 20);
-  // const expectedBookmarkStatus = !talk.isBookmarked
   const expectedTime = "08:00";
 
   const authors = screen.getByText(/adams/i);
-  console.log(authors);
-  //   const session = screen.getByText(/ornithopods/i);
   const title = screen.getByText(/no/i);
   const time = screen.getByText(/08:00/i);
 
   expect(authors).toHaveTextContent(expectedAuthorName);
-  //   expect(session).toHaveTextContent(expectedSessionName);
   expect(title).toHaveTextContent(expectedTitle);
-  // expect(isBookmarked).toHaveValue(expectedBookmarkStatus);
   expect(time).toHaveTextContent(expectedTime);
 });
