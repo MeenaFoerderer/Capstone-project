@@ -182,7 +182,7 @@ const RoomHeadline = styled.h1`
   width: 50%;
   padding: 0.3em 0;
   border-radius: 10px;
-  background: #493843;
+  background: var(--aubergine);
   color: #fff;
   font-size: 1.1rem;
   font-weight: 400;

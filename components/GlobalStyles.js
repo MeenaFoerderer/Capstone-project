@@ -26,6 +26,12 @@ const GlobalStyles = createGlobalStyle`
         src: url("/fonts/OpenSans-Bold.ttf")
     }
 
+    :root {
+        --aubergine: #493843;
+        --primary-text-color: #292929;
+        --secondary-text-color: #474747;
+    }
+
     html,
     body {
         padding: 0;

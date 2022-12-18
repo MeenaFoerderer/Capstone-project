@@ -120,6 +120,7 @@ function TalkDetails({ talks, onBookmarkToggle }) {
 const StyledMain = styled.div`
   margin: 0 auto;
   padding: 1em;
+  color: var(--primary-text-color);
 `;
 
 const IconWrapper = styled.div`
@@ -145,13 +146,11 @@ const StyledArticle = styled.article`
 
 const StyledTitle = styled.h1`
   font-size: 1.1rem;
-  color: #292929;
   font-family: OpenSans-Bold, sans-serif;
 `;
 
 const StyledAuthorList = styled.h2`
   font-size: 0.9rem;
-  color: #292929;
 `;
 
 const StyledFirstAuthor = styled.a`
@@ -161,18 +160,15 @@ const StyledFirstAuthor = styled.a`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #292929;
 `;
 
 const MailIcon = styled(TfiEmail)`
   margin-left: 0.3em;
-  color: #292929;
 `;
 
 const StyledAbstract = styled.p`
   text-align: justify;
   font-size: 0.9rem;
-  color: #292929;
 `;
 
 const StyledSession = styled.p`
@@ -180,7 +176,6 @@ const StyledSession = styled.p`
   padding: 0.5em 1em;
   border-radius: 5px;
   display: inline;
-  color: #292929;
 `;
 
 const InfoContainer = styled.ul`
@@ -189,7 +184,6 @@ const InfoContainer = styled.ul`
   font-size: 0.9rem;
   list-style: none;
   padding: 0;
-  color: #292929;
 `;
 
 const ToggleButton = styled.button`
@@ -226,7 +220,6 @@ const Modal = styled.div`
 
 const ModalHeader = styled.h3`
   margin: 0;
-  color: #292929;
 `;
 
 const ButtonWrapper = styled.div`
@@ -249,7 +242,7 @@ const Button = styled.button`
   ${({ variant }) =>
     variant === "continue" &&
     css`
-      background: #493843;
+      background: var(--aubergine);
       color: #fff;
     `}
 
@@ -257,7 +250,7 @@ const Button = styled.button`
     variant === "cancel" &&
     css`
       background: #fff;
-      color: #493843;
+      color: var(--aubergine);
     `}
 `;
 

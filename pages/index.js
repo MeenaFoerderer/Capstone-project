@@ -105,7 +105,7 @@ const TitleDecoration = styled.div`
 `;
 
 const TitleName = styled.h1`
-  color: #493843;
+  color: var(--aubergine);
   font-size: 2.15rem;
   margin: 0;
   text-align: center;
@@ -118,7 +118,7 @@ const YearWrapper = styled.div`
 `;
 
 const TitleYear = styled.h2`
-  color: #493843;
+  color: var(--aubergine);
   font-size: 2rem;
   margin: 0;
   margin-top: -0.2em;
@@ -130,7 +130,7 @@ const TitleYear = styled.h2`
 
 const Subtitle = styled.h2`
   font-size: 1.3rem;
-  color: #493843;
+  color: var(--aubergine);
   margin: 0;
   padding-bottom: 0.2em;
   text-align: justify;
@@ -154,7 +154,7 @@ const NavigationLink = styled(Link)`
   justify-content: center;
   background: #f9f9f9;
   text-decoration: none;
-  color: #493843;
+  color: var(--aubergine);
   font-size: 1.1rem;
   font-family: OpenSans-Bold, sans-serif;
   font-weight: bold;
@@ -162,7 +162,7 @@ const NavigationLink = styled(Link)`
 
   &:focus:active {
     background-color: #f9f9f9;
-    color: #493843;
+    color: var(--aubergine);
   }
 `;
 

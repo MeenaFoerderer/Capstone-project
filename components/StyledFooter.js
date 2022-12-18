@@ -39,7 +39,7 @@ const FooterLink = styled(Link)`
   padding: 0.3em 0;
 
   &:active:focus {
-    background-color: #493843;
+    background-color: var(--aubergine);
   }
 `;
 
