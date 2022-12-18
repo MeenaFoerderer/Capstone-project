@@ -77,7 +77,8 @@ const StyledTitle = styled.h1`
   max-width: 500px;
   margin: 0 auto;
   color: #303030;
-  padding: 1.5em 0 1em 1em;
+  padding: 1.5em;
+  padding-bottom: 1em;
   font-size: 1.5rem;
   font-family: OpenSans-Bold, sans-serif;
 `;
