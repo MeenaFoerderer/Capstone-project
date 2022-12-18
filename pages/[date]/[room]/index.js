@@ -134,12 +134,15 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 const Header = styled.div`
   background-color: #e6e4e5;
   text-align: center;
+  margin: 0 auto;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
+  max-width: 500px;
+  min-width: 350px;
 `;
 
 const DateLink = styled(Link)`
@@ -180,6 +183,8 @@ const RoomHeadlineContainer = styled.div`
 
 const RoomHeadline = styled.h1`
   width: 50%;
+  max-width: 250px;
+  min-width: 150px;
   padding: 0.3em 0;
   border-radius: 10px;
   background: var(--aubergine);

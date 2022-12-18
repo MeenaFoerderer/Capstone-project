@@ -121,6 +121,8 @@ const StyledMain = styled.div`
   margin: 0 auto;
   padding: 1em;
   color: var(--primary-text-color);
+  max-width: 500px;
+  min-width: 350px;
 `;
 
 const IconWrapper = styled.div`

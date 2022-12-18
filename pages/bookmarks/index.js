@@ -21,13 +21,10 @@ function Bookmarks({
 }) {
   return (
     <>
-      <Header>
+      <StyledMain>
         <StyledTitle>
           <IoBookmarks /> Bookmarks
         </StyledTitle>
-      </Header>
-
-      <StyledMain>
         <StyledList>
           {talks.map(
             (talk) =>
@@ -72,19 +69,15 @@ function Bookmarks({
   );
 }
 
-const Header = styled.div`
+const StyledTitle = styled.h1`
   background-color: #e6e4e5;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: 1em;
-`;
-
-const StyledTitle = styled.h1`
+  min-width: 400px;
+  max-width: 500px;
+  margin: 0 auto;
   color: #303030;
-  margin-left: 1em;
-  margin-top: 1.5em;
+  padding: 1.5em 0 1em 1em;
   font-size: 1.5rem;
   font-family: OpenSans-Bold, sans-serif;
 `;

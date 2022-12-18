@@ -37,15 +37,11 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: OpenSans, sans-serif;
+        background-color: #e6e4e5;
     }
 
     * {
         box-sizing: border-box;
-    }
-
-    body {
-        background-color: #e6e4e5;
-        font-family: OpenSans;
     }
 `;
 
