@@ -139,9 +139,10 @@ const CloseIcon = styled(IoCloseCircleOutline)`
 
 const StyledArticle = styled.article`
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
   padding: 1em;
   border-radius: 10px;
-  margin: 0 auto;
   margin-bottom: 4em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
@@ -177,7 +178,7 @@ const StyledSession = styled.p`
   font-size: 0.9rem;
   padding: 0.5em 1em;
   border-radius: 5px;
-  display: inline;
+  align-self: flex-start;
 `;
 
 const InfoContainer = styled.ul`
@@ -214,6 +215,7 @@ const Modal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
   gap: 20px;
   box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
     0px 1px 3px rgba(0, 0, 0, 0.3);
