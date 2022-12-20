@@ -11,8 +11,8 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
         <Image
           src="/images/landingpage02.jpeg"
           alt="historical museum hall with large whale skeleton hanging from the ceiling"
-          height={667}
-          width={375}
+          fill
+          style={{objectFit:"cover", objectPosition:"left"}}
         />
       </Background>
 
@@ -49,10 +49,7 @@ function LandingPage({ conferenceDays, conferenceRooms }) {
 }
 
 const StyledMain = styled.main`
-  margin: 0 auto;
   padding: 2em 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,22 +57,25 @@ const StyledMain = styled.main`
 `;
 
 const Background = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
-  align-self: center;
   position: fixed;
   overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  max-width: 820px;
 `;
 
 const ContentContainer = styled.div`
   z-index: 10;
-  max-width: 375px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 90vh;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
   margin: 0;
   margin-top: 2.5em;
   background: rgba(255, 255, 255, 0.7);
@@ -105,7 +105,7 @@ const TitleDecoration = styled.div`
 `;
 
 const TitleName = styled.h1`
-  color: #493843;
+  color: var(--aubergine);
   font-size: 2.15rem;
   margin: 0;
   text-align: center;
@@ -118,7 +118,7 @@ const YearWrapper = styled.div`
 `;
 
 const TitleYear = styled.h2`
-  color: #493843;
+  color: var(--aubergine);
   font-size: 2rem;
   margin: 0;
   margin-top: -0.2em;
@@ -130,7 +130,7 @@ const TitleYear = styled.h2`
 
 const Subtitle = styled.h2`
   font-size: 1.3rem;
-  color: #493843;
+  color: var(--aubergine);
   margin: 0;
   padding-bottom: 0.2em;
   text-align: justify;
@@ -140,7 +140,6 @@ const Subtitle = styled.h2`
 `;
 
 const LinkWrapper = styled.div`
-  margin-top: 22em;
   display: flex;
   gap: 0.8em;
 `;
@@ -154,7 +153,7 @@ const NavigationLink = styled(Link)`
   justify-content: center;
   background: #f9f9f9;
   text-decoration: none;
-  color: #493843;
+  color: var(--aubergine);
   font-size: 1.1rem;
   font-family: OpenSans-Bold, sans-serif;
   font-weight: bold;
@@ -162,7 +161,7 @@ const NavigationLink = styled(Link)`
 
   &:focus:active {
     background-color: #f9f9f9;
-    color: #493843;
+    color: var(--aubergine);
   }
 `;
 

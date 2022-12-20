@@ -35,11 +35,12 @@ const FooterLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   width: 100%;
+  min-width: 80px;
   height: 100%;
   padding: 0.3em 0;
 
   &:active:focus {
-    background-color: #493843;
+    background-color: var(--aubergine);
   }
 `;
 

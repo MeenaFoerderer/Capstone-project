@@ -120,6 +120,9 @@ function TalkDetails({ talks, onBookmarkToggle }) {
 const StyledMain = styled.div`
   margin: 0 auto;
   padding: 1em;
+  color: var(--primary-text-color);
+  max-width: 500px;
+  min-width: 350px;
 `;
 
 const IconWrapper = styled.div`
@@ -136,22 +139,21 @@ const CloseIcon = styled(IoCloseCircleOutline)`
 
 const StyledArticle = styled.article`
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
   padding: 1em;
   border-radius: 10px;
-  margin: 0 auto;
   margin-bottom: 4em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const StyledTitle = styled.h1`
   font-size: 1.1rem;
-  color: #292929;
   font-family: OpenSans-Bold, sans-serif;
 `;
 
 const StyledAuthorList = styled.h2`
   font-size: 0.9rem;
-  color: #292929;
 `;
 
 const StyledFirstAuthor = styled.a`
@@ -161,26 +163,22 @@ const StyledFirstAuthor = styled.a`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #292929;
 `;
 
 const MailIcon = styled(TfiEmail)`
   margin-left: 0.3em;
-  color: #292929;
 `;
 
 const StyledAbstract = styled.p`
   text-align: justify;
   font-size: 0.9rem;
-  color: #292929;
 `;
 
 const StyledSession = styled.p`
   font-size: 0.9rem;
   padding: 0.5em 1em;
   border-radius: 5px;
-  display: inline;
-  color: #292929;
+  align-self: flex-start;
 `;
 
 const InfoContainer = styled.ul`
@@ -189,7 +187,6 @@ const InfoContainer = styled.ul`
   font-size: 0.9rem;
   list-style: none;
   padding: 0;
-  color: #292929;
 `;
 
 const ToggleButton = styled.button`
@@ -218,6 +215,7 @@ const Modal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
   gap: 20px;
   box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
     0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -226,7 +224,6 @@ const Modal = styled.div`
 
 const ModalHeader = styled.h3`
   margin: 0;
-  color: #292929;
 `;
 
 const ButtonWrapper = styled.div`
@@ -249,7 +246,7 @@ const Button = styled.button`
   ${({ variant }) =>
     variant === "continue" &&
     css`
-      background: #493843;
+      background: var(--aubergine);
       color: #fff;
     `}
 
@@ -257,7 +254,7 @@ const Button = styled.button`
     variant === "cancel" &&
     css`
       background: #fff;
-      color: #493843;
+      color: var(--aubergine);
     `}
 `;
 

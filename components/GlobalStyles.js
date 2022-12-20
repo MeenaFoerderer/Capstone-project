@@ -26,20 +26,22 @@ const GlobalStyles = createGlobalStyle`
         src: url("/fonts/OpenSans-Bold.ttf")
     }
 
+    :root {
+        --aubergine: #493843;
+        --primary-text-color: #292929;
+        --secondary-text-color: #474747;
+    }
+
     html,
     body {
         padding: 0;
         margin: 0;
         font-family: OpenSans, sans-serif;
+        background-color: #e6e4e5;
     }
 
     * {
         box-sizing: border-box;
-    }
-
-    body {
-        background-color: #e6e4e5;
-        font-family: OpenSans;
     }
 `;
 

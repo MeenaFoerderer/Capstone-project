@@ -3,7 +3,7 @@ import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
 
 const BookmarkActive = styled(BsFillBookmarkFill)`
   font-size: 1.8rem;
-  color: #493843;
+  color: var(--aubergine);
 `;
 
 const BookmarkInactive = styled(BsBookmark)`

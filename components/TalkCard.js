@@ -84,6 +84,7 @@ const MainCardContainer = styled.div`
   padding: 0em 1em 1em 0;
   width: 100%;
   border-radius: 0 10px 10px 0;
+  color: var(--secondary-text-color);
 `;
 
 const CardHeader = styled.div`
@@ -95,12 +96,11 @@ const CardHeader = styled.div`
 
 const StyledTalkLink = styled(Link)`
   text-decoration: none;
-  color: #303030;
+  color: var(--secondary-text-color);
 `;
 
 const StyledTalkTitle = styled.h2`
   font-size: 1.1rem;
-  color: #474747;
   margin: 0.7em 0 0 0;
   font-family: OpenSans-SemiBold, sans-serif;
 `;
@@ -109,7 +109,6 @@ const StyledSpeakerName = styled.h3`
   font-size: 1rem;
   margin: 0.2em 0 0 0;
   font-weight: 400;
-  color: #474747;
 `;
 
 export default TalkCard;
