@@ -28,6 +28,7 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
 
   const conferenceDaysLinks = conferenceDays.map((day) => {
     return (
+      <DateItem>
       <DateLink
         key={`${day}`}
         href={`/${normalizeDate(day)}/${room}`}
@@ -47,6 +48,7 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
           })}
         </p>
       </DateLink>
+      </DateItem>
     );
   });
 
@@ -131,26 +133,30 @@ function Room({ conferenceDays, conferenceRooms, talks, onBookmarkToggle }) {
   );
 }
 
-const Header = styled.div`
-  background-color: #e6e4e5;
-  text-align: center;
-  margin: 0 auto;
+const Header = styled.ul`
+  display: flex;
+  scroll-snap-align: initial;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  max-width: 500px;
-  min-width: 350px;
-`;
+`
+
+const DateItem = styled.li`
+  scroll-snap-align: start;
+  width: 33.33333%;
+`
+
 
 const DateLink = styled(Link)`
   color: #616161;
   text-decoration: none;
-  width: 8em;
   height: 3.5em;
-  padding: 1em 3em;
+  padding: 1em;
   border: none;
   display: flex;
   justify-content: center;
