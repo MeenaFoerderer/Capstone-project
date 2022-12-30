@@ -16,9 +16,17 @@ import {
 } from "../../../../components/StyledBookmarks";
 import { TfiEmail } from "react-icons/tfi";
 import { useState } from "react";
+import NotesList from "../../../../components/NotesList";
+import { nanoid } from "nanoid";
 
 function TalkDetails({ talks, onBookmarkToggle }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [notes, setNotes] = useState([
+    {
+      id: nanoid(),
+      text: "This is the first note"
+    }
+  ]);
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -101,6 +109,8 @@ function TalkDetails({ talks, onBookmarkToggle }) {
             <li>{talkRoom}</li>
             <li>{time}</li>
           </InfoContainer>
+
+          <NotesList notes={notes}/>
         </StyledArticle>
       </StyledMain>
       <FooterNav variant="idPageFooter">
