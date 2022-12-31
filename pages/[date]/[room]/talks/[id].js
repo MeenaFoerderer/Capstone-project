@@ -15,6 +15,7 @@ import {
   BookmarkInactive,
 } from "../../../../components/StyledBookmarks";
 import { TfiEmail } from "react-icons/tfi";
+import {SlPencil} from "react-icons/sl"
 import { useState } from "react";
 import NotesList from "../../../../components/NotesList";
 import { nanoid } from "nanoid";
@@ -111,7 +112,10 @@ function TalkDetails({ talks, onBookmarkToggle }) {
           </InfoContainer>
 
           <NotesList notes={notes}/>
+
         </StyledArticle>
+        <AddNotesButton aria-label="add notes button"><AddNotesIcon/></AddNotesButton>
+        
       </StyledMain>
       <FooterNav variant="idPageFooter">
         <FooterLink href={"/"}>
@@ -133,6 +137,8 @@ const StyledMain = styled.div`
   color: var(--primary-text-color);
   max-width: 500px;
   min-width: 350px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const IconWrapper = styled.div`
@@ -206,6 +212,27 @@ const ToggleButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+const AddNotesIcon = styled(SlPencil)`
+font-size: 1.2rem;
+color: var(--primary-text-color);
+`
+
+const AddNotesButton = styled.button`
+border-radius: 50px;
+background: #f9ffe3;
+border: none;
+position: fixed;
+bottom: 35px;
+align-self: center;
+z-index: 100;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px;
+height: 50px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+`
 
 const BackButton = styled.button`
   background-color: transparent;
