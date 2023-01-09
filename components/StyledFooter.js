@@ -13,7 +13,7 @@ const FooterNav = styled.nav`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  height: 9vh;
+  height: 60px;
   width: 100%;
   display: flex;
   position: fixed;
@@ -24,7 +24,7 @@ const FooterNav = styled.nav`
   ${({ variant }) =>
     variant === "idPageFooter" &&
     css`
-      height: 8.6vh;
+      height: 58px;
     `}
 `;
 
@@ -37,7 +37,7 @@ const FooterLink = styled(Link)`
   width: 100%;
   min-width: 80px;
   height: 100%;
-  padding: 0.3em 0;
+  padding: 5px 0;
 
   &:active:focus {
     background-color: var(--aubergine);

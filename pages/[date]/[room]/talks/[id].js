@@ -22,12 +22,7 @@ import { nanoid } from "nanoid";
 
 function TalkDetails({ talks, onBookmarkToggle }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "This is the first note"
-    }
-  ]);
+  const [notes, setNotes] = useState([]);
   const router = useRouter();
   const { date, room, id } = router.query;
   if (!id || !date || !room) return;
@@ -48,6 +43,21 @@ function TalkDetails({ talks, onBookmarkToggle }) {
     "en-EN",
     { weekday: "long", day: "numeric", month: "numeric", year: "numeric" }
   );
+
+  const addNote = (text) => {
+    const newNote = {
+      id: nanoid(),
+      text: text
+    }
+
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
+  }
+
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes)
+  }
 
   const firstAuthor = authors[0];
   const coAuthors = ` ${authors.slice(1).join(", ")}`;
@@ -110,11 +120,14 @@ function TalkDetails({ talks, onBookmarkToggle }) {
             <li>{talkRoom}</li>
             <li>{time}</li>
           </InfoContainer>
-
-          <NotesList notes={notes}/>
-
         </StyledArticle>
-        <AddNotesButton aria-label="add notes button"><AddNotesIcon/></AddNotesButton>
+
+        <NotesList notes={notes} handleAddNote={addNote} handleDeleteNote={deleteNote}/>
+
+        {isBookmarked && (
+          <AddNotesButton aria-label="add notes button"><AddNotesIcon/></AddNotesButton>
+        )}
+        
         
       </StyledMain>
       <FooterNav variant="idPageFooter">
@@ -215,12 +228,12 @@ const ToggleButton = styled.button`
 
 const AddNotesIcon = styled(SlPencil)`
 font-size: 1.2rem;
-color: var(--primary-text-color);
+color: #fff;
 `
 
 const AddNotesButton = styled.button`
 border-radius: 50px;
-background: #f9ffe3;
+background: var(--aubergine);
 border: none;
 position: fixed;
 bottom: 35px;
@@ -231,7 +244,6 @@ align-items: center;
 justify-content: center;
 width: 50px;
 height: 50px;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `
 
 const BackButton = styled.button`
