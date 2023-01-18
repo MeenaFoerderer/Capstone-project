@@ -13,7 +13,6 @@ You can find the hosted version on [Vercel](https://capstone-project-proevent.ve
 ## Included Tech Stack
 
 - React
-- React Router
 - React Testing Library / Jest
 - Next.js
 - JavaScript
