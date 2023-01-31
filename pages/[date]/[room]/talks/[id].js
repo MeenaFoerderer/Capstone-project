@@ -59,6 +59,10 @@ function TalkDetails({ talks, onBookmarkToggle }) {
     setNotes(newNotes)
   }
 
+  function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
   const firstAuthor = authors[0];
   const coAuthors = ` ${authors.slice(1).join(", ")}`;
 
@@ -125,7 +129,9 @@ function TalkDetails({ talks, onBookmarkToggle }) {
         <NotesList notes={notes} handleAddNote={addNote} handleDeleteNote={deleteNote}/>
 
         {isBookmarked && (
-          <AddNotesButton aria-label="add notes button"><AddNotesIcon/></AddNotesButton>
+          <AddNotesButton aria-label="add notes button" onClick={() => {
+            scrollToBottom();
+          }}><AddNotesIcon/></AddNotesButton>
         )}
         
         
